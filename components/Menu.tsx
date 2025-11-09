@@ -1,6 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import { IoSearchOutline } from "react-icons/io5"
+import { PiShoppingCartSimple } from "react-icons/pi"
+import { TbLogin } from "react-icons/tb"
+import { GoBell } from "react-icons/go"
 
 export default function Menu() {
     return (
@@ -22,6 +25,19 @@ export default function Menu() {
                             className="outline-none w-full"
                         />
                     </div>
+                </div>
+                <div className="flex gap-4 items-center ">
+                    <GoBell className="text-2xl text-gray-600" />
+                    <Link
+                        href={"/"}
+                        className="flex gap-2 items-center border border-gray-200  rounded-lg px-4 py-2"
+                    >
+                        <TbLogin className="text-2xl text-gray-700" />
+                        <span className="text-gray-700 text-sm font-bold">
+                            ورود | ثبت نام
+                        </span>
+                    </Link>
+                    <PiShoppingCartSimple className="text-2xl text-gray-600" />
                 </div>
             </div>
             <div className="p-2">
