@@ -38,7 +38,7 @@ export default function Footer() {
                     <ScrollTopButton />
                 </div>
             </div>
-            <div className="flex justify-center items-center gap-20 px-4 py-8">
+            <div className="lg:flex hidden justify-center items-center gap-20 px-4 py-8">
                 <div className="flex flex-col items-center gap-2">
                     <div className="bg-green-400 p-4 text-white rounded-2xl">
                         <FaBox className="w-8 h-8" />
