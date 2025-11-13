@@ -163,8 +163,8 @@ export default function Footer() {
                     دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
                 </p>
             </div>
-            <div className="text-center bg-linear-to-r from-green-400  bg-green-500 to-green-600 text-white p-4">
-                <p className="font-bold">فروشگاه آنلاین ۱۴۰۴ ©</p>
+            <div className="text-center bg-linear-to-r from-green-400  bg-green-500 to-green-600 text-white p-2">
+                <p className="font-bold text-sm">فروشگاه آنلاین ۱۴۰۴ ©</p>
             </div>
         </footer>
     )
