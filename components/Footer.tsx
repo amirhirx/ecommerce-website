@@ -70,7 +70,7 @@ export default function Footer() {
                     <p className="text-sm font-semibold">ضمانت اصل بودن کالا</p>
                 </div>
             </div>
-            <div className="p-4 grid grid-cols-4">
+            <div className="p-4 grid md:grid-cols-4 md:grid-rows-1 grid-rows-4">
                 <div>
                     <h3 className="text-lg font-bold">فروشگاه آنلاین</h3>
                     <ul className="space-y-4 py-2 text-sm text-gray-700 font-medium">
