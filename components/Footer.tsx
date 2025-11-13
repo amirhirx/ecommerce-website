@@ -15,7 +15,7 @@ export default function Footer() {
     return (
         <footer className="bg-white">
             <div className="flex items-center justify-between p-4">
-                <div>
+                <div className="flex flex-col md:block">
                     <div className="flex items-center gap-2">
                         <Image
                             alt="Logo"
@@ -30,7 +30,7 @@ export default function Footer() {
                     <Link href={"tel:02112345678"} className="text-sm">
                         تلفن پشتیبانی 02112345678{" "}
                     </Link>
-                    <span className="text-sm mr-2">
+                    <span className="text-sm md:mr-2">
                         ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم
                     </span>
                 </div>
