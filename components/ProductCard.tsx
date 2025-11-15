@@ -10,7 +10,7 @@ export default function ProductCard() {
 
     return (
         <Link href={"/"}>
-            <div className="w-64 p-4 bg-white rounded-lg shadow-lg flex flex-col gap-4">
+            <div className="md:w-60 w-40 p-4 bg-white rounded-lg shadow-lg flex flex-col gap-4">
                 <img
                     className="w-full rounded-lg shadow"
                     alt="Thumbnail"
