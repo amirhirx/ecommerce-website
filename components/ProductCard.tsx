@@ -1,15 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 
-export default function ProductCard() {
-    const title =
-        "گوشی موبایل سامسونگ مدل Galaxy A16 4G ظرفیت 128 گیگابایت رم 4 گیگابایت - ویتنام"
-    const price = 12960000
-    const image =
-        "https://www.technolife.com/image/small_product-TLP-69646_ca7a1c03-d5a4-4d76-aab9-d64da1219b5d.png"
+interface IProductCard {
+    title: string
+    price: number
+    image: string
+    slug: string
+}
 
+export default function ProductCard({
+    title,
+    price,
+    image,
+    slug,
+}: IProductCard) {
     return (
-        <Link href={"/"}>
+        <Link href={`/products/${slug}`}>
             <div className="md:w-60 w-40 p-4 bg-white rounded-lg shadow-lg flex flex-col gap-4">
                 <img
                     className="w-full rounded-lg shadow"
