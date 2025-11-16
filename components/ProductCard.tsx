@@ -1,12 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { IProductCard } from "@/types/ProductCard"
 import Link from "next/link"
-
-interface IProductCard {
-    title: string
-    price: number
-    image: string
-    slug: string
-}
 
 export default function ProductCard({
     title,
