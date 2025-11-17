@@ -2,11 +2,11 @@ import { NextResponse } from "next/server"
 import productsJSON from "@/data.json"
 import { IProduct } from "@/types/Product"
 
-export async function GET(request: Request, { params }: never) {
-    const { id } = await params
+export async function GET(request: Request, { params }) {
+    const { slug } = await params
     const products: IProduct[] = productsJSON.products
     const product = products.find((product) => {
-        return product.id == id
+        return product.slug == slug
     })
 
     try {
