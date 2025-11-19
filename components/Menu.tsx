@@ -7,7 +7,7 @@ import { GoBell } from "react-icons/go"
 
 export default function Menu() {
     return (
-        <div className="bg-white">
+        <div className="bg-white shadow-md">
             <div className=" py-2 px-4 flex items-center justify-between">
                 <div className="flex items-center gap-4 w-6/12">
                     <Image
