@@ -1,4 +1,40 @@
 {
+    "brands": [
+        {
+            "name": "گوشی شیائومی",
+            "image": "/images/brands/xiaomi-phone.png"
+        },
+        {
+            "name": "گوشی سامسونگ",
+            "image": "/images/brands/samsung-phone.png"
+        },
+        {
+            "name": "گوشی پوکو",
+            "image": "/images/brands/poco-phone.png"
+        },
+        { "name": "مکبوک", "image": "/images/brands/mac-laptop.png" },
+        {
+            "name": "لپتاپ لنوو",
+            "image": "/images/brands/lenovo-laptop.png"
+        },
+        {
+            "name": "گوشی آیفون",
+            "image": "/images/brands/iphone-phone.png"
+        },
+        { "name": "لپتاپ hp", "image": "/images/brands/hp-laptop.png" },
+        {
+            "name": "گوشی آنر",
+            "image": "/images/brands/honor-phone.png"
+        },
+        {
+            "name": "لپتاپ ایسوس",
+            "image": "/images/brands/asus-laptop.png"
+        },
+        {
+            "name": "لپتاپ ایسر",
+            "image": "/images/brands/acer-laptop.png"
+        }
+    ],
     "products": [
         {
             "id": 1,
