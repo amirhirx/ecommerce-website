@@ -74,7 +74,7 @@ export default function Menu() {
                     <MenuSearch />
                     <IoMdMore className="w-10 h-10 text-gray-600" />
                 </div>
-                <div className="w-full flex gap-4 fixed bottom-0 bg-white p-4 items-center justify-around text-gray-600 shadow-md">
+                <div className="w-full flex gap-4 fixed bottom-0 bg-white p-4 items-center justify-around text-gray-600 border-t border-gray-300">
                     <div className="flex flex-col items-center gap-2">
                         <GoHomeFill className="w-6 h-6" />
                         <span className="text-xs">صفحه اصلی</span>
