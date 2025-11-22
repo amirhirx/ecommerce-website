@@ -75,22 +75,30 @@ export default function Menu() {
                     <IoMdMore className="w-10 h-10 text-gray-600" />
                 </div>
                 <div className="w-full flex gap-4 fixed bottom-0 bg-white p-4 items-center justify-around text-gray-600 border-t border-gray-300">
-                    <div className="flex flex-col items-center gap-2">
-                        <GoHomeFill className="w-6 h-6" />
-                        <span className="text-xs">صفحه اصلی</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                        <BiSolidCategory className="w-6 h-6" />
-                        <span className="text-xs">دسته بندی ها</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                        <PiShoppingCartSimple className="w-6 h-6" />
-                        <span className="text-xs">سبد خرید</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                        <TbLogin className="w-6 h-6" />
-                        <span className="text-xs">ورود</span>
-                    </div>
+                    <Link href={"/"}>
+                        <div className="flex flex-col items-center gap-2">
+                            <GoHomeFill className="w-6 h-6" />
+                            <span className="text-xs">صفحه اصلی</span>
+                        </div>
+                    </Link>
+                    <Link href={"/categories"}>
+                        <div className="flex flex-col items-center gap-2">
+                            <BiSolidCategory className="w-6 h-6" />
+                            <span className="text-xs">دسته بندی ها</span>
+                        </div>
+                    </Link>
+                    <Link href={"/cart"}>
+                        <div className="flex flex-col items-center gap-2">
+                            <PiShoppingCartSimple className="w-6 h-6" />
+                            <span className="text-xs">سبد خرید</span>
+                        </div>
+                    </Link>
+                    <Link href={"/login"}>
+                        <div className="flex flex-col items-center gap-2">
+                            <TbLogin className="w-6 h-6" />
+                            <span className="text-xs">ورود</span>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </>
