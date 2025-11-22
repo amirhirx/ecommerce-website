@@ -64,7 +64,7 @@ export default function Menu() {
                 </div>
             </div>
             <div className="md:hidden">
-                <div className="bg-white flex justify-between items-center p-4 gap-4 shadow-md">
+                <div className="w-full bg-white flex justify-between items-center p-4 gap-4 border-b border-gray-300 fixed top-0 z-10">
                     <Image
                         src={"/logo.svg"}
                         alt="Logo"
@@ -74,7 +74,7 @@ export default function Menu() {
                     <MenuSearch />
                     <IoMdMore className="w-10 h-10 text-gray-600" />
                 </div>
-                <div className="w-full flex gap-4 fixed bottom-0 bg-white p-4 items-center justify-around text-gray-600 border-t border-gray-300">
+                <div className="w-full flex gap-4 fixed bottom-0 bg-white p-4 items-center justify-around text-gray-600 border-t border-gray-300 z-10">
                     <Link href={"/"}>
                         <div className="flex flex-col items-center gap-2">
                             <GoHomeFill className="w-6 h-6" />
