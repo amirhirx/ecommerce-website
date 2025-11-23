@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import Menu from "@/components/Menu"
 import Footer from "@/components/Footer"
+import { CartContextProvider } from "@/contexts/CartContext"
 
 export const metadata: Metadata = {
     title: "Ecommerce Website",
@@ -14,12 +15,14 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="fa">
-            <body className={`bg-gray-200 antialiased`}>
-                <Menu />
-                {children}
-                <Footer />
-            </body>
-        </html>
+        <CartContextProvider>
+            <html lang="fa">
+                <body className={`bg-gray-200 antialiased`}>
+                    <Menu />
+                    {children}
+                    <Footer />
+                </body>
+            </html>
+        </CartContextProvider>
     )
 }
