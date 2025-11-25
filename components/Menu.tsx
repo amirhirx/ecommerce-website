@@ -37,31 +37,6 @@ export default function Menu() {
                         <PiShoppingCartSimple className="text-2xl text-gray-600" />
                     </div>
                 </div>
-                <div className="p-2">
-                    <nav className="flex gap-2">
-                        <span>دسته بندی کالاها</span>
-                        <ul className="flex gap-4 text-gray-600">
-                            <li>
-                                <Link href={"/"}>لینک ۱</Link>
-                            </li>
-                            <li>
-                                <Link href={"/"}>لینک ۲</Link>
-                            </li>
-                            <li>
-                                <Link href={"/"}>لینک ۳</Link>
-                            </li>
-                            <li>
-                                <Link href={"/"}>لینک ۴</Link>
-                            </li>
-                            <li>
-                                <Link href={"/"}>لینک ۵</Link>
-                            </li>
-                            <li>
-                                <Link href={"/"}>لینک ۶</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
             <div className="md:hidden">
                 <div className="w-full bg-white flex justify-between items-center p-4 gap-4 border-b border-gray-300 fixed top-0 z-10">
