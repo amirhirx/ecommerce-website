@@ -1,5 +1,11 @@
 import ProductsFilter from "@/components/ProductsFilter"
 import ProductsList from "@/components/ProductsList"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "محصولات",
+    description: "صفحه محصولات فروشگاه",
+}
 
 export default async function Products() {
     return (

@@ -1,4 +1,10 @@
+import { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata:Metadata = {
+    title: "صفحه ۴۰۴",
+    description: "ممکن است آدرس اشتباه باشد و یا صفحه پاک شده باشد"
+}
 
 export default function NotFound() {
     return (
