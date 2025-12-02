@@ -34,7 +34,9 @@ export default function Menu() {
                                 ورود | ثبت نام
                             </span>
                         </Link>
-                        <PiShoppingCartSimple className="text-2xl text-gray-600" />
+                        <Link href={"/cart"}>
+                            <PiShoppingCartSimple className="text-2xl text-gray-600" />
+                        </Link>
                     </div>
                 </div>
             </div>
