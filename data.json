@@ -596,6 +596,371 @@
                     "rating": 4
                 }
             ]
+        },
+        {
+            "id": 6,
+            "title": "گوشی شیائومی 17 پرو مکس 5G",
+            "slug": "xiaomi-17-pro-max-5g",
+            "shortDescription": "گوشی شیائومی 17 پرو مکس با نمایشگر AMOLED، پردازنده قدرتمند و دوربین حرفه‌ای",
+            "description": "شیائومی 17 پرو مکس یک گوشی پیشرفته با نمایشگر ۶.۸ اینچی AMOLED و نرخ تازه‌سازی 120 هرتز است که تجربه بصری ممتاز ارائه می‌دهد. این دستگاه با پردازنده قدرتمند Snapdragon 8 Gen 3، رم بالا و حافظه سریع، عملکردی ایده‌آل برای استفاده روزمره، بازی و کارهای سنگین فراهم می‌کند. دوربین اصلی ۲۰۰ مگاپیکسلی، فیلم‌برداری باکیفیت و ثبت تصاویر کم‌نور عالی را ارائه می‌دهد. باتری ۵۰۰۰ میلی‌آمپر ساعتی به همراه شارژ سریع ۱۲۰ وات، این گوشی را به انتخابی مناسب برای کاربران حرفه‌ای تبدیل کرده است.",
+            "price": 38990000,
+            "discount": 12,
+            "inStock": true,
+            "stockCount": 38,
+            "brand": "Xiaomi",
+            "category": ["موبایل", "گوشی هوشمند", "شیائومی"],
+            "tags": [
+                "گوشی هوشمند",
+                "شیائومی",
+                "Xiaomi 17 Pro Max",
+                "دوربین حرفه‌ای",
+                "AMOLED",
+                "باتری قوی",
+                "5G"
+            ],
+            "images": [
+                "/images/xiaomi-17-pro-max/xiaomi-17-pro-max-1.jpeg",
+                "/images/xiaomi-17-pro-max/xiaomi-17-pro-max-2.jpeg",
+                "/images/xiaomi-17-pro-max/xiaomi-17-pro-max-3.jpeg",
+                "/images/xiaomi-17-pro-max/xiaomi-17-pro-max-4.jpeg",
+                "/images/xiaomi-17-pro-max/xiaomi-17-pro-max-5.jpeg"
+            ],
+            "features": [
+                { "text": "سایز نمایشگر", "value": "۶.۸ اینچ" },
+                { "text": "رزولوشن", "value": "1440x3200 پیکسل (QHD+)" },
+                { "text": "نوع نمایشگر", "value": "AMOLED LTPO 3.0" },
+                { "text": "نرخ تازه‌سازی", "value": "120 هرتز" },
+                { "text": "روشنایی", "value": "حداکثر 2600 نیت" },
+                {
+                    "text": "دوربین",
+                    "value": "200/12/8 مگاپیکسل - سلفی 32 مگاپیکسل"
+                },
+                { "text": "رم", "value": "8/12/16 گیگابایت" },
+                { "text": "حافظه داخلی", "value": "256/512 گیگابایت" },
+                { "text": "پردازنده", "value": "Qualcomm Snapdragon 8 Gen 3" },
+                { "text": "باتری", "value": "5000 میلی‌آمپر ساعت" },
+                {
+                    "text": "شارژ سریع",
+                    "value": "120 وات سیمی - 50 وات بی‌سیم"
+                },
+                { "text": "سیستم عامل", "value": "اندروید 14" },
+                {
+                    "text": "توضیحات سیستم عامل",
+                    "value": "عرضه با HyperOS و دریافت آپدیت‌های اصلی اندروید"
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "امیرحسین",
+                    "comment": "گوشی فوق‌العاده سریع و روان است.",
+                    "rating": 5
+                },
+                {
+                    "name": "سارا",
+                    "comment": "کیفیت دوربین در حد پرچم‌دارهای گران‌قیمت است.",
+                    "rating": 5
+                },
+                {
+                    "name": "علی",
+                    "comment": "شارژ خیلی سریع است، تجربه عالی.",
+                    "rating": 5
+                },
+                {
+                    "name": "مریم",
+                    "comment": "صفحه‌نمایش فوق‌العاده روشن، اما کمی سنگین است.",
+                    "rating": 4
+                },
+                {
+                    "name": "رضا",
+                    "comment": "پردازنده قوی و اجرای روان بازی‌ها.",
+                    "rating": 5
+                },
+                {
+                    "name": "فاطمه",
+                    "comment": "رابط کاربری خوب است ولی برخی امکانات جای بهبود دارند.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "گوشی اپل آیفون 16",
+            "slug": "apple-iphone-16",
+            "shortDescription": "نسل جدید آیفون با پردازنده قدرتمند A18، دوربین پیشرفته و طراحی بهبودیافته.",
+            "description": "اپل آیفون 16 با طراحی به‌روز، پردازنده فوق‌سریع A18 و بهینه‌سازی‌های نرم‌افزاری گسترده معرفی شده است. این گوشی با نمایشگر 6.1 اینچی Super Retina XDR کیفیت تصویر عالی، روشنایی بالا و رنگ‌های دقیق را ارائه می‌کند. دوربین اصلی ارتقایافته با پردازش هوش مصنوعی نسل جدید، در عکاسی روز و شب عملکرد بی‌نظیری دارد.\n\nآیفون 16 با iOS 18 عرضه شده و امکانات گسترده‌ای مانند افزایش قابلیت‌های هوش مصنوعی اپل، امنیت بیشتر و شخصی‌سازی بهتر را فراهم می‌کند. باتری بهینه‌شده به‌همراه شارژ سریع و سازگاری با MagSafe استفاده روزمره را راحت‌تر و کارآمدتر می‌سازد.\n\nاگر به دنبال یک گوشی سریع، خوش‌ساخت و پایدار با کیفیت ساخت پریمیوم هستید، آیفون 16 یکی از بهترین انتخاب‌ها در بازار است.",
+            "price": 84990000,
+            "discount": 5,
+            "inStock": true,
+            "stockCount": 18,
+            "brand": "Apple",
+            "category": ["گوشی موبایل", "پرچم‌دار", "iOS"],
+            "tags": [
+                "iPhone 16",
+                "اپل",
+                "iOS",
+                "پرچم‌دار",
+                "دوربین پیشرفته",
+                "پردازنده A18"
+            ],
+            "images": [
+                "/images/apple-iphone-16/apple-iphone-16-1.jpeg",
+                "/images/apple-iphone-16/apple-iphone-16-2.jpeg",
+                "/images/apple-iphone-16/apple-iphone-16-3.jpeg",
+                "/images/apple-iphone-16/apple-iphone-16-4.jpeg",
+                "/images/apple-iphone-16/apple-iphone-16-5.jpeg",
+                "/images/apple-iphone-16/apple-iphone-16-6.jpeg",
+                "/images/apple-iphone-16/apple-iphone-16-7.jpeg"
+            ],
+            "features": [
+                { "text": "نمایشگر", "value": "6.1 اینچ Super Retina XDR" },
+                { "text": "پردازنده", "value": "Apple A18 Bionic" },
+                {
+                    "text": "دوربین اصلی",
+                    "value": "سنسور 48 مگاپیکسل با پردازش هوش مصنوعی جدید"
+                },
+                { "text": "سلفی", "value": "12 مگاپیکسل" },
+                {
+                    "text": "باتری",
+                    "value": "بهینه‌شده با شارژ سریع و پشتیبانی از MagSafe"
+                },
+                { "text": "حافظه", "value": "128/256/512 گیگابایت" },
+                { "text": "سیستم‌عامل", "value": "iOS 18" },
+                {
+                    "text": "قابلیت‌ها",
+                    "value": "Face ID، اسپیکر استریو، بدنه مقاوم در برابر آب IP68"
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "پارسا",
+                    "comment": "سرعت گوشی فوق‌العاده‌ست. اجرای برنامه‌ها بدون ذره‌ای مکث.",
+                    "rating": 5
+                },
+                {
+                    "name": "مهسا",
+                    "comment": "کیفیت تصویر و دوربین عالی. به‌ویژه حالت شب خیلی بهتر شده.",
+                    "rating": 5
+                },
+                {
+                    "name": "سام",
+                    "comment": "باتری بهتر از نسل قبله، ولی هنوز می‌تونست قوی‌تر باشه.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "گوشی اپل آیفون 16 پرو مکس",
+            "slug": "apple-iphone-16-pro-max",
+            "shortDescription": "پرچم‌دار قدرتمند اپل با چیپ A18 Pro و دوربین ارتقایافته.",
+            "description": "اپل آیفون 16 پرو مکس با بدنه تیتانیومی، نمایشگر 6.9 اینچ Super Retina XDR، پردازنده A18 Pro و سیستم دوربین ارتقایافته عرضه شده است. این مدل سریع‌ترین عملکرد، بهترین کیفیت ساخت و پایدارترین تجربه کاربری در میان گوشی‌های هوشمند را ارائه می‌دهد. پشتیبانی از iOS 18، باتری بهینه‌شده و امکانات پیشرفته هوش مصنوعی از ویژگی‌های برجسته این دستگاه هستند.",
+            "price": 129990000,
+            "discount": 4,
+            "inStock": true,
+            "stockCount": 10,
+            "brand": "Apple",
+            "category": ["گوشی موبایل", "پرچم‌دار", "iOS"],
+            "tags": ["اپل", "آیفون", "iPhone 16 Pro Max", "پرچم‌دار"],
+            "images": [
+                "/images/apple-iphone-16-pro-max/apple-iphone-16-pro-max-1.jpeg",
+                "/images/apple-iphone-16-pro-max/apple-iphone-16-pro-max-2.jpeg",
+                "/images/apple-iphone-16-pro-max/apple-iphone-16-pro-max-3.jpeg",
+                "/images/apple-iphone-16-pro-max/apple-iphone-16-pro-max-4.jpeg",
+                "/images/apple-iphone-16-pro-max/apple-iphone-16-pro-max-5.jpeg",
+                "/images/apple-iphone-16-pro-max/apple-iphone-16-pro-max-6.jpeg",
+                "/images/apple-iphone-16-pro-max/apple-iphone-16-pro-max-7.jpeg"
+            ],
+            "features": [
+                { "text": "نمایشگر", "value": "6.9 اینچ Super Retina XDR" },
+                { "text": "پردازنده", "value": "A18 Pro" },
+                {
+                    "text": "دوربین اصلی",
+                    "value": "48 مگاپیکسل با نسل جدید پردازش تصویری"
+                },
+                { "text": "سلفی", "value": "12 مگاپیکسل" },
+                { "text": "باتری", "value": "بهینه‌شده + شارژ سریع + MagSafe" },
+                { "text": "حافظه داخلی", "value": "256/512GB/1TB" }
+            ],
+            "reviews": [
+                {
+                    "name": "سپهر",
+                    "comment": "یکی از بهترین گوشی‌های حال حاضر دنیاست.",
+                    "rating": 5
+                },
+                {
+                    "name": "ماهان",
+                    "comment": "نمایشگر فوق‌العاده با روشنایی بالا.",
+                    "rating": 5
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "گوشی اپل آیفون 17 پرو مکس",
+            "slug": "apple-iphone-17-pro-max",
+            "shortDescription": "نسل آینده آیفون با طراحی جدید و قابلیت‌های هوش مصنوعی تقویت‌شده.",
+            "description": "آیفون 17 پرو مکس با طراحی جدید، پردازنده A19 Pro و سیستم دوربین پیشرفته‌تر عرضه شده است. این نسل تمرکز ویژه‌ای بر عملکرد هوش مصنوعی، پردازش تصویر و مصرف انرژی بهینه دارد. با نمایشگر LTPO پیشرفته و بدنه تیتانیومی، تجربه‌ای لوکس و قدرتمند ارائه می‌دهد.",
+            "price": 139990000,
+            "discount": 3,
+            "inStock": true,
+            "stockCount": 12,
+            "brand": "Apple",
+            "category": ["گوشی موبایل", "پرچم‌دار", "iOS"],
+            "tags": ["iPhone 17 Pro Max", "اپل", "پرچم‌دار", "هوش مصنوعی"],
+            "images": [
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-1.jpeg",
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-2.jpeg",
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-3.jpeg",
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-4.jpeg",
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-5.jpeg",
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-6.jpeg",
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-7.jpeg",
+                "/images/apple-iphone-17-pro-max/apple-iphone-17-pro-max-8.jpeg"
+            ],
+            "features": [
+                { "text": "نمایشگر", "value": "6.9 اینچ LTPO Super Retina" },
+                { "text": "پردازنده", "value": "A19 Pro" },
+                { "text": "دوربین", "value": "سنسور 50 مگاپیکسل جدید" },
+                { "text": "سیستم‌عامل", "value": "iOS 19" }
+            ],
+            "reviews": [
+                {
+                    "name": "پارمیس",
+                    "comment": "بهترین تجربه اپل تا امروز.",
+                    "rating": 5
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "گوشی سامسونگ گلکسی A16 5G",
+            "slug": "samsung-galaxy-a16-5g",
+            "shortDescription": "گوشی اقتصادی با پشتیبانی 5G، باتری قوی و نمایشگر بزرگ.",
+            "description": "گلکسی A16 5G با نمایشگر بزرگ، باتری 5000 میلی‌آمپرساعتی و پشتیبانی از شبکه 5G، گزینه‌ای مناسب برای استفاده روزمره، تماشای محتوا و بازی‌های سبک است. طراحی جدید سامسونگ و بهینه‌سازی رابط کاربری One UI تجربه روانی ارائه می‌دهد.",
+            "price": 8990000,
+            "discount": 7,
+            "inStock": true,
+            "stockCount": 30,
+            "brand": "Samsung",
+            "category": ["گوشی موبایل", "میان‌رده"],
+            "tags": ["Samsung", "A16 5G", "میان‌رده", "5G"],
+            "images": [
+                "/images/galaxy-a16-5g/samsung-galaxy-a16-5g-1.jpeg",
+                "/images/galaxy-a16-5g/samsung-galaxy-a16-5g-2.jpeg",
+                "/images/galaxy-a16-5g/samsung-galaxy-a16-5g-3.jpeg",
+                "/images/galaxy-a16-5g/samsung-galaxy-a16-5g-4.jpeg",
+                "/images/galaxy-a16-5g/samsung-galaxy-a16-5g-5.jpeg",
+                "/images/galaxy-a16-5g/samsung-galaxy-a16-5g-6.jpeg"
+            ],
+            "features": [
+                { "text": "نمایشگر", "value": "6.6 اینچ" },
+                { "text": "پردازنده", "value": "MediaTek 5G" },
+                { "text": "باتری", "value": "5000 میلی‌آمپر" }
+            ],
+            "reviews": [
+                {
+                    "name": "سمیرا",
+                    "comment": "نسبت به قیمت ارزش خرید دارد.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "title": "گوشی سامسونگ گلکسی S24 FE",
+            "slug": "samsung-galaxy-s24-fe",
+            "shortDescription": "مدل Fan Edition با امکانات پرچم‌دار و قیمت مناسب‌تر.",
+            "description": "گلکسی S24 FE با نمایشگر AMOLED و پردازنده قدرتمند، تجربه‌ای نزدیک به پرچم‌داران سامسونگ ارائه می‌دهد. طراحی مدرن، دوربین پیشرفته و باتری پایدار، این گوشی را به گزینه‌ای محبوب میان کاربران حرفه‌ای تبدیل کرده است.",
+            "price": 26990000,
+            "discount": 5,
+            "inStock": true,
+            "stockCount": 14,
+            "brand": "Samsung",
+            "category": ["گوشی موبایل", "بالارده"],
+            "tags": ["Samsung", "S24 FE", "Fan Edition"],
+            "images": [
+                "/images/galaxy-s24-fe/samsung-galaxy-s24-fe-1.jpeg",
+                "/images/galaxy-s24-fe/samsung-galaxy-s24-fe-2.jpeg",
+                "/images/galaxy-s24-fe/samsung-galaxy-s24-fe-3.jpeg"
+            ],
+            "features": [
+                { "text": "نمایشگر", "value": "6.4 اینچ AMOLED" },
+                {
+                    "text": "پردازنده",
+                    "value": "Exynos / Snapdragon بسته به نسخه"
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "محمد",
+                    "comment": "مدل FE همیشه ارزش خرید عالی دارد.",
+                    "rating": 5
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "title": "گوشی سامسونگ گلکسی S25 اولترا",
+            "slug": "samsung-galaxy-s25-ultra",
+            "shortDescription": "پرچم‌دار جدید سامسونگ با دوربین قدرتمند و نمایشگر فوق‌پیشرفته.",
+            "description": "گلکسی S25 اولترا با طراحی جدید و استفاده از چیپ نسل بعدی Snapdragon، یکی از قوی‌ترین گوشی‌های دنیا محسوب می‌شود. دوربین قدرتمند، نمایشگر 120Hz و باتری بهینه‌شده تجربه‌ای کاملاً حرفه‌ای ارائه می‌دهد.",
+            "price": 56990000,
+            "discount": 6,
+            "inStock": true,
+            "stockCount": 9,
+            "brand": "Samsung",
+            "category": ["گوشی موبایل", "پرچم‌دار"],
+            "tags": ["S25 Ultra", "Samsung", "پرچم‌دار"],
+            "images": [
+                "/images/galaxy-s25-ultra/samsung-galaxy-s25-ultra-1.jpeg",
+                "/images/galaxy-s25-ultra/samsung-galaxy-s25-ultra-2.jpeg",
+                "/images/galaxy-s25-ultra/samsung-galaxy-s25-ultra-3.jpeg",
+                "/images/galaxy-s25-ultra/samsung-galaxy-s25-ultra-4.jpeg",
+                "/images/galaxy-s25-ultra/samsung-galaxy-s25-ultra-5.jpeg"
+            ],
+            "features": [
+                { "text": "نمایشگر", "value": "6.8 اینچ AMOLED 120Hz" },
+                { "text": "پردازنده", "value": "Snapdragon جدید" }
+            ],
+            "reviews": [
+                {
+                    "name": "هومان",
+                    "comment": "دوربینش فوق‌العاده است.",
+                    "rating": 5
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "title": "گوشی شیائومی ردمی نوت 13 پرو 4G",
+            "slug": "xiaomi-redmi-note-13-pro-4g",
+            "shortDescription": "میان‌رده محبوب با دوربین 200 مگاپیکسل و باتری قوی.",
+            "description": "ردمی نوت 13 پرو 4G یکی از ارزشمندترین میان‌رده‌ها در بازار است. نمایشگر AMOLED، دوربین قدرتمند، باتری 5000 میلی‌آمپر و پردازنده کارآمد تجربه‌ای روان و مطلوب ارائه می‌دهد.",
+            "price": 12990000,
+            "discount": 8,
+            "inStock": true,
+            "stockCount": 20,
+            "brand": "Xiaomi",
+            "category": ["گوشی موبایل", "میان‌رده"],
+            "tags": ["Xiaomi", "Redmi Note 13 Pro", "میان‌رده"],
+            "images": [
+                "/images/xiaomi-redmi-note-13-pro-4g/xiaomi-redmi-note-13-pro-4g-1.jpeg",
+                "/images/xiaomi-redmi-note-13-pro-4g/xiaomi-redmi-note-13-pro-4g-2.jpeg",
+                "/images/xiaomi-redmi-note-13-pro-4g/xiaomi-redmi-note-13-pro-4g-3.jpeg"
+            ],
+            "features": [
+                { "text": "نمایشگر", "value": "AMOLED 120Hz" },
+                { "text": "دوربین", "value": "200 مگاپیکسل" },
+                { "text": "باتری", "value": "5000 میلی‌آمپر" }
+            ],
+            "reviews": [
+                {
+                    "name": "بهاره",
+                    "comment": "از نظر دوربین عالیه.",
+                    "rating": 5
+                }
+            ]
         }
+
     ]
 }
