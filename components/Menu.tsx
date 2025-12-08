@@ -1,83 +1,112 @@
-import Image from "next/image"
 import Link from "next/link"
-import { PiShoppingCartSimple } from "react-icons/pi"
-import { TbLogin } from "react-icons/tb"
-import { GoBell } from "react-icons/go"
-import { GoHomeFill } from "react-icons/go"
-import { BiSolidCategory } from "react-icons/bi"
-import { IoMdMore } from "react-icons/io"
-import MenuSearch from "./MenuSearch"
+import { IconType } from "react-icons"
+import { FiHome } from "react-icons/fi"
+import { BsShop } from "react-icons/bs"
+import { MdOutlineArticle } from "react-icons/md"
+import { IoInformationCircleOutline } from "react-icons/io5"
+import { TfiHeadphoneAlt } from "react-icons/tfi"
+import { LuShoppingBasket } from "react-icons/lu"
+import { FiUser } from "react-icons/fi"
+import { SlFire } from "react-icons/sl"
+import { FaHashtag } from "react-icons/fa6"
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2"
+import { HiBars3 } from "react-icons/hi2"
+
+interface INavigation {
+    text: string
+    href: string
+    icon: IconType
+}
+
+const navigations: INavigation[] = [
+    { text: "صفحه اصلی", href: "/", icon: FiHome },
+    { text: "فروشگاه", href: "/products", icon: BsShop },
+    { text: "وبلاگ", href: "/blog", icon: MdOutlineArticle },
+    { text: "درباره ما", href: "/about", icon: IoInformationCircleOutline },
+    { text: "تماس با ما", href: "/contact", icon: TfiHeadphoneAlt },
+]
+
+const topTags: string[] = ["لپ_تاپ_گیمینگ", "دانشجویی", "مدیریت_شرکت"]
 
 export default function Menu() {
     return (
-        <>
-            <div className="bg-white shadow-md md:block hidden">
-                <div className=" py-2 px-4 flex items-center justify-between">
-                    <div className="flex items-center gap-4 w-6/12">
-                        <Image
-                            src={"/logo.svg"}
-                            alt="Logo"
-                            width={56}
-                            height={56}
-                        />
-                        <span className="font-black text-xl">فروشگاه</span>
-                        <MenuSearch />
-                    </div>
-                    <div className="flex gap-4 items-center ">
-                        <GoBell className="text-2xl text-gray-600" />
-                        <Link
-                            href={"/"}
-                            className="flex gap-2 items-center border border-gray-200  rounded-lg px-4 py-2"
-                        >
-                            <TbLogin className="text-2xl text-gray-700" />
-                            <span className="text-gray-700 text-sm font-bold">
-                                ورود | ثبت نام
-                            </span>
-                        </Link>
-                        <Link href={"/cart"}>
-                            <PiShoppingCartSimple className="text-2xl text-gray-600" />
-                        </Link>
-                    </div>
-                </div>
-            </div>
-            <div className="md:hidden">
-                <div className="w-full bg-white flex justify-between items-center p-4 gap-4 border-b border-gray-300 fixed top-0 z-10">
-                    <Image
-                        src={"/logo.svg"}
-                        alt="Logo"
-                        width={40}
-                        height={40}
-                    />
-                    <MenuSearch />
-                    <IoMdMore className="w-10 h-10 text-gray-600" />
-                </div>
-                <div className="w-full flex gap-4 fixed bottom-0 bg-white p-4 items-center justify-around text-gray-600 border-t border-gray-300 z-10">
+        <header className="w-full md:w-98/100 md:my-4 md:mx-auto bg-green-400 md:rounded-xl md:overflow-hidden shadow">
+            <div className="flex items-center justify-between bg-white p-4 md:p-6 md:rounded-br-3xl">
+                <div>
                     <Link href={"/"}>
-                        <div className="flex flex-col items-center gap-2">
-                            <GoHomeFill className="w-6 h-6" />
-                            <span className="text-xs">صفحه اصلی</span>
-                        </div>
+                        <h1 className="text-lg font-black">وبسایت فروشگاهی</h1>
                     </Link>
-                    <Link href={"/categories"}>
-                        <div className="flex flex-col items-center gap-2">
-                            <BiSolidCategory className="w-6 h-6" />
-                            <span className="text-xs">دسته بندی ها</span>
-                        </div>
+                </div>
+                <div className="md:hidden -order-1">
+                    {/* Mobile Menu */}
+                    <HiBars3 size={22} />
+                    {/* TODO: Menu items drawer */}
+                </div>
+                <div className="hidden md:block">
+                    {/* Desktop Menu */}
+                    <ul className="flex items-center gap-8">
+                        {navigations.map(
+                            ({ text, href, icon: Icon }, index) => {
+                                return (
+                                    <li
+                                        key={`nav-${index}`}
+                                        className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition font-semibold"
+                                    >
+                                        <Icon />
+                                        <Link href={href}>{text}</Link>
+                                    </li>
+                                )
+                            }
+                        )}
+                    </ul>
+                </div>
+                <div className="flex items-center gap-4">
+                    <Link href={"#"}>
+                        <FiUser size={22} />
                     </Link>
-                    <Link href={"/cart"}>
-                        <div className="flex flex-col items-center gap-2">
-                            <PiShoppingCartSimple className="w-6 h-6" />
-                            <span className="text-xs">سبد خرید</span>
-                        </div>
-                    </Link>
-                    <Link href={"/login"}>
-                        <div className="flex flex-col items-center gap-2">
-                            <TbLogin className="w-6 h-6" />
-                            <span className="text-xs">ورود</span>
-                        </div>
+                    <Link
+                        href={"/cart"}
+                        className="text-white bg-green-400 hover:bg-green-500 transition p-2 rounded-xl"
+                    >
+                        <LuShoppingBasket size={22} />
                     </Link>
                 </div>
             </div>
-        </>
+            <div className="hidden md:flex items-center justify-between py-2 px-6">
+                <div>
+                    <ul className="flex item-center gap-4">
+                        <h2 className="font-bold flex items-center gap-2">
+                            <SlFire />
+                            محبوبترین ها
+                        </h2>
+                        {topTags.map((tag, index) => {
+                            return (
+                                <li key={`tag-${index}`}>
+                                    <Link
+                                        href={"#"}
+                                        className="flex items-center gap-1 font-medium"
+                                    >
+                                        <FaHashtag />
+                                        {tag}
+                                    </Link>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div>
+                    <form className="flex item-center gap-2">
+                        <input
+                            type="text"
+                            placeholder="جستجوی محصولات..."
+                            className="bg-white rounded-lg outline-none p-1 text-sm"
+                        />
+                        <button className="bg-green-600 rounded-lg p-1 px-1.5">
+                            <HiOutlineMagnifyingGlass className="text-white" />
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </header>
     )
 }
