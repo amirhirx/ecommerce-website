@@ -1,22 +1,45 @@
+"use client"
+import { IFilter } from "@/types/Filter"
+import { useState } from "react"
+
 export default function ProductsFilter() {
+    const [filter, setFilter] = useState({
+        brand: "",
+        maxPrice: 1_000_000_000,
+    } as IFilter)
+
+    const filterChangeHandler = (
+        event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) => {
+        const { name, value } = event.target
+        setFilter((prevFilter) => {
+            return { ...prevFilter, [name]: value }
+        })
+    }
+
     return (
         <div className="bg-white p-4 rounded-md shadow-lg sticky top-5 space-y-4">
             <h2 className="font-bold text-lg">فیلتر ها</h2>
             <form>
                 <div className="space-y-2">
-                    <label
-                        htmlFor="products-price"
-                        className="font-bold text-md"
-                    >
-                        قیمت
-                    </label>
+                    <div className="flex items-center justify-between">
+                        <label htmlFor="maxPrice" className="font-bold text-md">
+                            قیمت
+                        </label>
+                        <p className="text-sm font-medium text-gray-600">
+                            {filter.maxPrice} تومان
+                        </p>
+                    </div>
                     <input
                         type="range"
-                        name="products-price"
-                        id="products-price"
+                        name="maxPrice"
+                        id="maxPrice"
                         className="w-full accent-green-400"
                         min={0}
-                        max={100000000}
+                        max={1_000_000_000}
+                        step={1_000_000}
+                        value={filter.maxPrice}
+                        onChange={filterChangeHandler}
                     />
                 </div>
                 <div className="space-y-2">
@@ -27,7 +50,10 @@ export default function ProductsFilter() {
                         name="brand"
                         id="brand"
                         className="w-full py-2 px-4 bg-gray-300/60 rounded-lg outline-none"
+                        defaultValue={""}
+                        onChange={filterChangeHandler}
                     >
+                        <option value={""}>برند ها...</option>
                         <option value="samsung">سامسونگ</option>
                         <option value="xiaomi">شیائومی</option>
                         <option value="poco">پوکو</option>
