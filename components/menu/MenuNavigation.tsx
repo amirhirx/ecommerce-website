@@ -1,8 +1,11 @@
+"use client"
 import { INavigation } from "@/types/navigation"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { HiBars3 } from "react-icons/hi2"
 
 export default function MenuNavigation({ items }: { items: INavigation[] }) {
+    const path = usePathname()
     return (
         <>
             <div className="md:hidden -order-1">
@@ -13,13 +16,17 @@ export default function MenuNavigation({ items }: { items: INavigation[] }) {
             <div className="hidden md:block">
                 {/* Desktop Menu */}
                 <ul className="flex items-center gap-8">
-                    {items.map(({ text, href, icon: Icon }, index) => {
+                    {items.map(({ text, href, icon }, index) => {
                         return (
                             <li
                                 key={`nav-${index}`}
-                                className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition font-semibold"
+                                className={`flex items-center gap-2 hover:text-green-600 transition font-semibold ${
+                                    path === href
+                                        ? "text-green-600"
+                                        : "text-gray-600"
+                                }`}
                             >
-                                <Icon />
+                                {icon}
                                 <Link href={href}>{text}</Link>
                             </li>
                         )
