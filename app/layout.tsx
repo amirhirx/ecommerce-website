@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import Menu from "@/components/Menu"
+import Menu from "@/components/menu/Menu"
 import Footer from "@/components/Footer"
 import { CartContextProvider } from "@/contexts/CartContext"
 

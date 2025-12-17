@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { IconType } from "react-icons"
+
 import { FiHome } from "react-icons/fi"
 import { BsShop } from "react-icons/bs"
 import { MdOutlineArticle } from "react-icons/md"
@@ -10,13 +10,8 @@ import { FiUser } from "react-icons/fi"
 import { SlFire } from "react-icons/sl"
 import { FaHashtag } from "react-icons/fa6"
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2"
-import { HiBars3 } from "react-icons/hi2"
-
-interface INavigation {
-    text: string
-    href: string
-    icon: IconType
-}
+import MenuNavigation from "./MenuNavigation"
+import { INavigation } from "@/types/navigation"
 
 const navigations: INavigation[] = [
     { text: "صفحه اصلی", href: "/", icon: FiHome },
@@ -37,29 +32,7 @@ export default function Menu() {
                         <h1 className="text-lg font-black">وبسایت فروشگاهی</h1>
                     </Link>
                 </div>
-                <div className="md:hidden -order-1">
-                    {/* Mobile Menu */}
-                    <HiBars3 size={22} />
-                    {/* TODO: Menu items drawer */}
-                </div>
-                <div className="hidden md:block">
-                    {/* Desktop Menu */}
-                    <ul className="flex items-center gap-8">
-                        {navigations.map(
-                            ({ text, href, icon: Icon }, index) => {
-                                return (
-                                    <li
-                                        key={`nav-${index}`}
-                                        className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition font-semibold"
-                                    >
-                                        <Icon />
-                                        <Link href={href}>{text}</Link>
-                                    </li>
-                                )
-                            }
-                        )}
-                    </ul>
-                </div>
+                <MenuNavigation items={navigations} />
                 <div className="flex items-center gap-4">
                     <Link href={"#"}>
                         <FiUser size={22} />
