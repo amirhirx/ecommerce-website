@@ -49,7 +49,7 @@ export default function ProductsFilter() {
                     <select
                         name="brand"
                         id="brand"
-                        className="w-full py-2 px-4 bg-gray-300/60 rounded-lg outline-none"
+                        className="w-full py-2 px-4 bg-gray-300/60 rounded-lg outline-none appearance-none"
                         defaultValue={""}
                         onChange={filterChangeHandler}
                     >
@@ -60,6 +60,11 @@ export default function ProductsFilter() {
                         <option value="apple">اپل</option>
                         <option value="nothing">ناتینگ</option>
                     </select>
+                </div>
+                <div className="pt-4">
+                    <button className="w-full rounded-md py-2 bg-green-400 text-white font-bold cursor-pointer">
+                        فیلتر
+                    </button>
                 </div>
             </form>
         </div>
