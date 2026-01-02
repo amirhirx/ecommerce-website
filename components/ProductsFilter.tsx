@@ -18,7 +18,7 @@ export default function ProductsFilter() {
     }
 
     return (
-        <div className="bg-white p-4 rounded-md shadow-lg sticky top-5 space-y-4">
+        <div className="md:w-80 w-11/12 mx-auto bg-white p-4 rounded-md shadow-lg md:sticky md:top-5 space-y-4">
             <h2 className="font-bold text-lg">فیلتر ها</h2>
             <form>
                 <div className="space-y-2">
