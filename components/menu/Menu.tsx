@@ -14,11 +14,11 @@ import MenuNavigation from "./MenuNavigation"
 import { INavigation } from "@/types/navigation"
 
 const navigations: INavigation[] = [
-    { text: "صفحه اصلی", href: "/", icon: FiHome() },
-    { text: "فروشگاه", href: "/products", icon: BsShop() },
-    { text: "وبلاگ", href: "/blog", icon: MdOutlineArticle() },
-    { text: "درباره ما", href: "/about", icon: IoInformationCircleOutline() },
-    { text: "تماس با ما", href: "/contact", icon: TfiHeadphoneAlt() },
+    { text: "صفحه اصلی", href: "/", icon: FiHome({}) },
+    { text: "فروشگاه", href: "/products", icon: BsShop({}) },
+    { text: "وبلاگ", href: "/blog", icon: MdOutlineArticle({}) },
+    { text: "درباره ما", href: "/about", icon: IoInformationCircleOutline({}) },
+    { text: "تماس با ما", href: "/contact", icon: TfiHeadphoneAlt({}) },
 ]
 
 const topTags: string[] = ["لپ_تاپ_گیمینگ", "دانشجویی", "مدیریت_شرکت"]
