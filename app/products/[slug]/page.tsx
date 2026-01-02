@@ -3,7 +3,11 @@ import ProductPrice from "@/components/ProductPrice"
 import { getProductBySlug } from "@/services/getProductBySlug"
 import { IProduct } from "@/types/Product"
 
-export default async function Product({ params }: any) {
+export default async function Product({
+    params,
+}: {
+    params: Promise<{ slug: string }>
+}) {
     const { slug } = await params
     const { id, title, images, features, price, shortDescription }: IProduct =
         await getProductBySlug(slug)
