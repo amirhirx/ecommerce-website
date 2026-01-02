@@ -4,7 +4,7 @@ export default async function ProductsContainer({
     children: React.ReactNode
 }) {
     return (
-        <div className="md:flex md:flex-wrap md:gap-4 gap-2 grid grid-cols-2">
+        <div className="md:w-full md:flex md:flex-wrap gap-4 grid grid-cols-1 md:p-0 p-4">
             {children}
         </div>
     )
