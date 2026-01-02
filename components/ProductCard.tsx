@@ -10,9 +10,9 @@ export default function ProductCard({
 }: IProductCard) {
     return (
         <Link href={`/products/${slug}`}>
-            <div className="md:w-60 w-40 p-4 bg-white rounded-lg shadow-lg flex flex-col gap-4">
+            <div className="md:w-60 w-full p-4 bg-white rounded-lg shadow-lg flex flex-col gap-4">
                 <img
-                    className="w-full md:h-52 h-32 rounded-lg shadow object-cover"
+                    className="w-full md:h-52 h-72 rounded-lg shadow object-cover"
                     alt="Thumbnail"
                     src={image}
                 />
