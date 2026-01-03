@@ -17,8 +17,8 @@ export default function ProductGallery({
                 <div className="rounded-md overflow-hidden shadow-md">
                     <Image
                         src={images[currentSlide]}
-                        width={480}
-                        height={480}
+                        width={300}
+                        height={360}
                         alt={alt}
                         className="object-cover"
                     />
