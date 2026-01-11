@@ -1,3 +1,4 @@
+import ProductDescription from "@/components/product/ProductDescription"
 import ProductDetail from "@/components/product/ProductDetail"
 import ProductPrice from "@/components/product/ProductPrice"
 import { getProductBySlug } from "@/services/getProductBySlug"
@@ -17,10 +18,11 @@ export default async function Product({
         images,
         shortDescription,
         features,
+        description,
     }: IProduct = await getProductBySlug(slug)
 
     return (
-        <div className="w-[97.5%] mx-auto">
+        <div className="w-[97.5%] mx-auto space-y-4 p-2 md:px-0 md:py-4">
             <div className="flex flex-col md:flex-row gap-4">
                 <div className="md:w-full">
                     <ProductDetail
@@ -34,6 +36,7 @@ export default async function Product({
                     <ProductPrice id={id} price={price} discount={discount} />
                 </div>
             </div>
+            <ProductDescription content={description} />
         </div>
     )
 }
