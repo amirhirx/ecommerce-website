@@ -1,9 +1,13 @@
+"use client"
 import { FaBoxesPacking } from "react-icons/fa6"
 import { IoBagCheckSharp } from "react-icons/io5"
 import { IoMdPricetags } from "react-icons/io"
 import { MdPayments } from "react-icons/md"
+import { useContext } from "react"
+import { CartContext } from "@/contexts/CartContext"
 
 export default function ProductPrice({
+    id,
     price,
     discount,
 }: {
@@ -13,6 +17,11 @@ export default function ProductPrice({
 }) {
     const isPriceOff = discount ? true : false
     const discountedPrice = price - (price * discount) / 100
+
+    const { addItem } = useContext(CartContext)
+    const clickHandler = () => {
+        addItem(id)
+    }
 
     return (
         <div className="w-full bg-white rounded-xl py-2 px-4 space-y-4">
@@ -52,7 +61,10 @@ export default function ProductPrice({
                     </span>
                 </div>
             </div>
-            <button className="w-full py-2 bg-green-400 text-white font-extrabold rounded-xl cursor-pointer">
+            <button
+                onClick={clickHandler}
+                className="w-full py-2 bg-green-400 text-white font-extrabold rounded-xl cursor-pointer"
+            >
                 افزودن به سبد خرید
             </button>
         </div>
