@@ -10,7 +10,7 @@ export default async function ProductsContainer({
     page: number
 }) {
     const productPerPage = 8
-    const startIndex = (Number(page) || 1 - 1) * productPerPage
+    const startIndex = ((Number(page) || 1) - 1) * productPerPage
     const lastIndex = startIndex + productPerPage
     const paginatedProducts = products
         ? products.slice(startIndex, lastIndex)
