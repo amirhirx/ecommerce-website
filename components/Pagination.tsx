@@ -15,24 +15,29 @@ export default function Pagination({
     const totalPages = Math.ceil(count / productPerPage)
 
     return (
-        <ul className="flex justify-center items-center gap-4 py-4">
+        <div className="flex justify-center items-center gap-4 py-4">
             {currentPages > 1 && (
-                <li className="bg-white w-10 h-10 rounded-lg flex justify-center items-center">
-                    <Link href={`?page=${currentPages - 1}`}>
-                        <BsArrowRight />
-                    </Link>
-                </li>
+                <Link
+                    href={`?page=${currentPages - 1}`}
+                    className="bg-white w-10 h-10 rounded-lg flex justify-center items-center"
+                >
+                    <BsArrowRight />
+                </Link>
             )}
-            <li className="bg-white w-10 h-10 rounded-lg flex justify-center items-center">
-                <Link href={`?page=${currentPages}`}>{currentPages}</Link>
-            </li>
+            <Link
+                href={`?page=${currentPages}`}
+                className="bg-white w-10 h-10 rounded-lg flex justify-center items-center"
+            >
+                {currentPages}
+            </Link>
             {currentPages < totalPages && (
-                <li className="bg-white w-10 h-10 rounded-lg flex justify-center items-center">
-                    <Link href={`?page=${currentPages + 1}`}>
-                        <BsArrowLeft />
-                    </Link>
-                </li>
+                <Link
+                    href={`?page=${currentPages + 1}`}
+                    className="bg-white w-10 h-10 rounded-lg flex justify-center items-center"
+                >
+                    <BsArrowLeft />
+                </Link>
             )}
-        </ul>
+        </div>
     )
 }

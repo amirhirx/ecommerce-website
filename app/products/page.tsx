@@ -1,8 +1,6 @@
 import { Metadata } from "next"
 import ProductsFilter from "@/components/ProductsFilter"
 import ProductsContainer from "@/components/ProductsContainer"
-import { IProduct } from "@/types/Product"
-import ProductCard from "@/components/ProductCard"
 import { getAllProducts } from "@/services/getAllProducts"
 
 export const metadata: Metadata = {
