@@ -10,28 +10,19 @@ export const metadata: Metadata = {
     description: "صفحه محصولات فروشگاه",
 }
 
-export default async function Products() {
+export default async function Products({
+    searchParams,
+}: {
+    searchParams: { page: string }
+}) {
     const { products } = await getAllProducts()
+    const { page } = await searchParams
     return (
         <div className="w-[97.5%] mx-auto">
             <h1 className="text-2xl font-black my-2">محصولات</h1>
             <div className="md:flex md:items-start md:gap-6">
                 <ProductsFilter />
-                <ProductsContainer>
-                    {products.map(
-                        ({ id, title, price, images, slug }: IProduct) => {
-                            return (
-                                <ProductCard
-                                    key={id}
-                                    title={title}
-                                    price={price}
-                                    image={images[0]}
-                                    slug={slug}
-                                />
-                            )
-                        }
-                    )}
-                </ProductsContainer>
+                <ProductsContainer products={products} page={Number(page)} />
             </div>
         </div>
     )
