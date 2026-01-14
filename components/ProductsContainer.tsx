@@ -1,5 +1,6 @@
 import { IProduct } from "@/types/Product"
 import ProductCard from "@/components/ProductCard"
+import Pagination from "@/components/Pagination"
 
 export default async function ProductsContainer({
     products,
@@ -16,20 +17,26 @@ export default async function ProductsContainer({
         : []
 
     return (
-        <div className="md:w-full md:flex md:flex-wrap gap-4 grid grid-cols-1 md:p-0 p-4">
-            {paginatedProducts.map(
-                ({ id, title, price, images, slug }: IProduct) => {
-                    return (
-                        <ProductCard
-                            key={id}
-                            title={title}
-                            price={price}
-                            image={images[0]}
-                            slug={slug}
-                        />
-                    )
-                }
-            )}
+        <div className="md:w-full">
+            <div className="md:flex md:flex-wrap gap-4 grid grid-cols-1 md:p-0 p-4">
+                {paginatedProducts.map(
+                    ({ id, title, price, images, slug }: IProduct) => {
+                        return (
+                            <ProductCard
+                                key={id}
+                                title={title}
+                                price={price}
+                                image={images[0]}
+                                slug={slug}
+                            />
+                        )
+                    }
+                )}
+            </div>
+            <Pagination
+                count={products.length}
+                productPerPage={productPerPage}
+            />
         </div>
     )
 }
