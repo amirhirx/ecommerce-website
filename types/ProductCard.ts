@@ -3,4 +3,5 @@ export interface IProductCard {
     price: number
     image: string
     slug: string
+    discount: number
 }

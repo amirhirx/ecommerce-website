@@ -20,7 +20,14 @@ export default async function ProductsContainer({
         <div className="md:w-full">
             <div className="md:flex md:flex-wrap gap-4 grid grid-cols-1 md:p-0 p-4">
                 {paginatedProducts.map(
-                    ({ id, title, price, images, slug }: IProduct) => {
+                    ({
+                        id,
+                        title,
+                        price,
+                        images,
+                        slug,
+                        discount,
+                    }: IProduct) => {
                         return (
                             <ProductCard
                                 key={id}
@@ -28,6 +35,7 @@ export default async function ProductsContainer({
                                 price={price}
                                 image={images[0]}
                                 slug={slug}
+                                discount={discount}
                             />
                         )
                     }
