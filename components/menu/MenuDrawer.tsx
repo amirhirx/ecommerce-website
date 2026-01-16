@@ -13,13 +13,13 @@ export default function MenuDrawer({
 }) {
     return (
         <div
-            className={`w-60 h-screen p-4 z-10 fixed top-0 right-0 bg-white shadow-3xl border-l border-l-gray-200 transition duration-300 ${
+            className={`w-60 h-screen p-4 z-10 fixed top-0 right-0 bg-white shadow-3xl border-l border-l-gray-200 transition duration-500 ${
                 isShown ? "translate-x-0" : "translate-x-100"
             }`}
         >
             <MdClose
                 onClick={closeHandler}
-                size={20}
+                size={22}
                 className="absolute top-5 left-5"
             />
 
@@ -27,7 +27,9 @@ export default function MenuDrawer({
                 {items.map(({ text, href }, index) => {
                     return (
                         <li key={`mobile-nav-${index}`}>
-                            <Link href={href}>{text}</Link>
+                            <Link href={href} onClick={closeHandler}>
+                                {text}
+                            </Link>
                         </li>
                     )
                 })}
