@@ -13,7 +13,7 @@ export default function MenuNavigation({ items }: { items: INavigation[] }) {
         <>
             <div className="md:hidden -order-1">
                 {/* Mobile Menu */}
-                <HiBars3 size={22} onClick={() => setIsMenuShown(true)} />
+                <HiBars3 size={26} onClick={() => setIsMenuShown(true)} />
                 <MenuDrawer
                     items={items}
                     isShown={isMenuShown}
