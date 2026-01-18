@@ -9,10 +9,12 @@ export default function ScrollTopButton() {
     return (
         <button
             onClick={scrollTop}
-            className="flex items-center border border-gray-500 rounded-lg  text-gray-500 py-2 px-4 gap-2 text-sm cursor-pointer hover:text-green-400 hover:border-green-400 shadow"
+            className="flex items-center border border-gray-500 rounded-lg  text-gray-500 p-3 md:py-2 md:px-4 gap-2 text-sm cursor-pointer hover:text-green-400 hover:border-green-400 shadow"
         >
-            <span className="font-semibold">بازگشت به بالا</span>
-            <IoIosArrowUp />
+            <span className="font-semibold hidden md:block">
+                بازگشت به بالا
+            </span>
+            <IoIosArrowUp size={18} />
         </button>
     )
 }
