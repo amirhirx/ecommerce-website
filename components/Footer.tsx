@@ -13,7 +13,7 @@ import { SiAparat, SiLinkedin } from "react-icons/si"
 
 export default function Footer() {
     return (
-        <footer className="bg-white">
+        <footer className="w-full md:w-98/100 md:my-4 md:mx-auto md:rounded-xl md:overflow-hidden bg-white">
             <div className="flex items-center justify-between p-4">
                 <div className="flex flex-col md:block">
                     <div className="flex items-center gap-2">
