@@ -1,4 +1,5 @@
 "use client"
+import { useUpdateSearchParams } from "@/hooks/useUpdateSearchParams"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
@@ -11,32 +12,30 @@ export default function Pagination({
     productPerPage: number
 }) {
     const searchParams = useSearchParams()
+    const setParams = useUpdateSearchParams()
     const currentPages = Number(searchParams.get("page") || 1)
     const totalPages = Math.ceil(count / productPerPage)
 
     return (
         <div className="flex justify-center items-center gap-4 py-4">
             {currentPages > 1 && (
-                <Link
-                    href={`?page=${currentPages - 1}`}
-                    className="bg-white w-10 h-10 rounded-lg flex justify-center items-center"
+                <button
+                    onClick={() => setParams({ page: currentPages - 1 })}
+                    className="bg-white w-10 h-10 rounded-lg flex justify-center items-center cursor-pointer"
                 >
                     <BsArrowRight />
-                </Link>
+                </button>
             )}
-            <Link
-                href={`?page=${currentPages}`}
-                className="bg-white w-10 h-10 rounded-lg flex justify-center items-center"
-            >
+            <div className="bg-white w-10 h-10 rounded-lg flex justify-center items-center">
                 {currentPages}
-            </Link>
+            </div>
             {currentPages < totalPages && (
-                <Link
-                    href={`?page=${currentPages + 1}`}
-                    className="bg-white w-10 h-10 rounded-lg flex justify-center items-center"
+                <button
+                    onClick={() => setParams({ page: currentPages + 1 })}
+                    className="bg-white w-10 h-10 rounded-lg flex justify-center items-center cursor-pointer"
                 >
                     <BsArrowLeft />
-                </Link>
+                </button>
             )}
         </div>
     )
