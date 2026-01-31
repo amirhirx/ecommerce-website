@@ -1,15 +1,17 @@
 "use client"
+import { useUpdateSearchParams } from "@/hooks/useUpdateSearchParams"
 import { IFilter } from "@/types/Filter"
 import { useState } from "react"
 
 export default function ProductsFilter() {
+    const setParams = useUpdateSearchParams()
     const [filter, setFilter] = useState({
         brand: "",
         maxPrice: 1_000_000_000,
     } as IFilter)
 
     const filterChangeHandler = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+        event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
     ) => {
         const { name, value } = event.target
         setFilter((prevFilter) => {
@@ -62,7 +64,15 @@ export default function ProductsFilter() {
                     </select>
                 </div>
                 <div className="pt-4">
-                    <button className="w-full rounded-md py-2 bg-green-400 text-white font-bold cursor-pointer">
+                    <button
+                        className="w-full rounded-md py-2 bg-green-400 text-white font-bold cursor-pointer"
+                        onClick={() =>
+                            setParams({
+                                price: filter.maxPrice,
+                                brand: filter.brand,
+                            })
+                        }
+                    >
                         فیلتر
                     </button>
                 </div>
