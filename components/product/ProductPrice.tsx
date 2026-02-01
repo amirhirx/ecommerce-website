@@ -5,6 +5,7 @@ import { IoMdPricetags } from "react-icons/io"
 import { MdPayments } from "react-icons/md"
 import { useContext } from "react"
 import { CartContext } from "@/contexts/CartContext"
+import { formatPrice } from "@/utils/formatPrice"
 
 export default function ProductPrice({
     id,
@@ -48,11 +49,14 @@ export default function ProductPrice({
                 <div className="flex flex-col gap-2">
                     {isPriceOff && (
                         <strong className="text-xl line-through decoration-1 text-red-500">
-                            {price}
+                            {formatPrice(price)}
                         </strong>
                     )}
                     <strong className={`text-xl`}>
-                        {isPriceOff ? discountedPrice : price} تومان
+                        {isPriceOff
+                            ? formatPrice(discountedPrice)
+                            : formatPrice(price)}
+                        تومان
                     </strong>
                 </div>
                 <div>

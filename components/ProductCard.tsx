@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { IProductCard } from "@/types/ProductCard"
+import { formatPrice } from "@/utils/formatPrice"
 import Link from "next/link"
 
 export default function ProductCard({
@@ -21,12 +22,15 @@ export default function ProductCard({
                 <h3 className="md:text-sm font-medium line-clamp-1">{title}</h3>
                 <div className="flex items-center justify-between">
                     <div className="text-lg md:text-sm font-semibold">
-                        {discount ? priceAfterDiscount : price} تومان{" "}
+                        {discount
+                            ? formatPrice(priceAfterDiscount)
+                            : formatPrice(price)}
+                        تومان{" "}
                     </div>
                     {discount ? (
                         <>
                             <div className="md:text-xs text-red-500 font-medium">
-                                {price} تومان
+                                {formatPrice(price)} تومان
                             </div>
                             <div className="absolute top-3 left-3 w-8 h-8 bg-red-500 text-white font-medium text-sm rounded-xl flex items-center justify-center">
                                 {discount}%

@@ -1,6 +1,7 @@
 "use client"
 import { useUpdateSearchParams } from "@/hooks/useUpdateSearchParams"
 import { IFilter } from "@/types/Filter"
+import { formatPrice } from "@/utils/formatPrice"
 import { useState } from "react"
 
 export default function ProductsFilter() {
@@ -29,7 +30,7 @@ export default function ProductsFilter() {
                             قیمت
                         </label>
                         <p className="text-sm font-medium text-gray-600">
-                            {filter.maxPrice} تومان
+                            {formatPrice(filter.maxPrice)} تومان
                         </p>
                     </div>
                     <input
