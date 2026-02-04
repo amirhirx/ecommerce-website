@@ -4,12 +4,12 @@ import { IProduct } from "@/types/Product"
 
 export async function GET(
     request: Request,
-    { params }: { params: Promise<{ slug: string }> }
+    { params }: { params: Promise<{ id: number }> },
 ) {
-    const { slug } = await params
+    const { id } = await params
     const products: IProduct[] = productsJSON.products
     const product = products.find((product) => {
-        return product.slug == slug
+        return product.id == id
     })
 
     try {
