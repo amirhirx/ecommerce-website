@@ -13,8 +13,9 @@ export default async function Products({
 }: {
     searchParams: { page: string }
 }) {
-    const { products } = await getAllProducts()
+    const products = await getAllProducts()
     const { page } = await searchParams
+
     return (
         <div className="w-[97.5%] mx-auto">
             <h1 className="text-2xl font-black my-2">محصولات</h1>

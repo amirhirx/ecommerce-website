@@ -20,7 +20,7 @@ export async function GET(request: Request) {
         if (slugQuery) {
             const product = products.find((items) => items.slug === slugQuery)
             if (product) {
-                return NextResponse.json({ products: product }, { status: 200 })
+                return NextResponse.json({ product }, { status: 200 })
             } else {
                 return NextResponse.json(
                     { message: "Not found!" },
