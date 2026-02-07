@@ -45,6 +45,8 @@ export default function Cart() {
                                     title={product.title}
                                     qty={qty}
                                     thumbnail={product.images[0]}
+                                    discount={product.discount}
+                                    price={product.price}
                                 />
                             )
                         })}
