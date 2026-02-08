@@ -25,7 +25,7 @@ export default function ProductPrice({
     }
 
     return (
-        <div className="w-full bg-white rounded-xl py-2 px-4 space-y-4">
+        <div className="w-full bg-white rounded-xl py-2 px-4 space-y-4 md:sticky md:top-3">
             <h3 className="font-bold text-lg">خرید محصول</h3>
             <ul className="text-sm text-gray-600 space-y-4">
                 <li className="flex gap-2">
