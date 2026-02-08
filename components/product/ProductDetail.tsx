@@ -25,15 +25,15 @@ export default function ProductDetail({
                     <h1 className="font-black text-2xl">{title}</h1>
                     <p className="text-gray-600">{shortDescription}</p>
                     <div>
-                        <h3 className="flex items-center gap-2 font-bold text-lg">
+                        <h3 className="flex items-center gap-2 font-bold text-lg mb-2">
                             ویژگی ها
                         </h3>
-                        <ul className="space-y-2">
+                        <ul className="space-y-2.5">
                             {features.map(({ text, value }, index) => {
                                 return (
                                     <li
                                         key={`feature-${index}`}
-                                        className="text-gray-600"
+                                        className="text-gray-600 text-sm"
                                     >
                                         <b className="text-black font-semibold">
                                             {text}:
