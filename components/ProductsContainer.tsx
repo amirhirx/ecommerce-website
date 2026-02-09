@@ -27,6 +27,7 @@ export default async function ProductsContainer({
                         images,
                         slug,
                         discount,
+                        inStock,
                     }: IProduct) => {
                         return (
                             <ProductCard
@@ -36,9 +37,10 @@ export default async function ProductsContainer({
                                 image={images[0]}
                                 slug={slug}
                                 discount={discount}
+                                inStock={inStock}
                             />
                         )
-                    }
+                    },
                 )}
             </div>
             <Pagination

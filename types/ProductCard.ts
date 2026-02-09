@@ -4,4 +4,5 @@ export interface IProductCard {
     image: string
     slug: string
     discount: number
+    inStock: boolean
 }

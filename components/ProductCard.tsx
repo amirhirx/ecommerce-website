@@ -9,6 +9,7 @@ export default function ProductCard({
     image,
     slug,
     discount,
+    inStock,
 }: IProductCard) {
     const priceAfterDiscount = price - Math.ceil((price * discount) / 100)
     return (
@@ -21,22 +22,28 @@ export default function ProductCard({
                 />
                 <h3 className="md:text-sm font-medium line-clamp-1">{title}</h3>
                 <div className="flex items-center justify-between">
-                    <div className="text-lg md:text-sm font-semibold">
-                        {discount
-                            ? formatPrice(priceAfterDiscount)
-                            : formatPrice(price)}
-                        تومان{" "}
-                    </div>
-                    {discount ? (
+                    {inStock ? (
                         <>
-                            <div className="md:text-xs text-red-500 font-medium">
-                                {formatPrice(price)} تومان
+                            <div className="text-lg md:text-sm font-semibold">
+                                {discount
+                                    ? formatPrice(priceAfterDiscount)
+                                    : formatPrice(price)}
+                                تومان{" "}
                             </div>
-                            <div className="absolute top-3 left-3 w-8 h-8 bg-red-500 text-white font-medium text-sm rounded-xl flex items-center justify-center">
-                                {discount}%
-                            </div>
+                            {discount ? (
+                                <>
+                                    <div className="md:text-xs text-red-500 font-medium">
+                                        {formatPrice(price)} تومان
+                                    </div>
+                                    <div className="absolute top-3 left-3 w-8 h-8 bg-red-500 text-white font-medium text-sm rounded-xl flex items-center justify-center">
+                                        {discount}%
+                                    </div>
+                                </>
+                            ) : null}
                         </>
-                    ) : null}
+                    ) : (
+                        <p className="font-medium">موجود نیست!</p>
+                    )}
                 </div>
             </div>
         </Link>
