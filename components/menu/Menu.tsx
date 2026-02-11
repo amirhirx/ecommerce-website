@@ -5,13 +5,13 @@ import { BsShop } from "react-icons/bs"
 import { MdOutlineArticle } from "react-icons/md"
 import { IoInformationCircleOutline } from "react-icons/io5"
 import { TfiHeadphoneAlt } from "react-icons/tfi"
-import { LuShoppingBasket } from "react-icons/lu"
 import { FiUser } from "react-icons/fi"
 import { SlFire } from "react-icons/sl"
 import { FaHashtag } from "react-icons/fa6"
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2"
 import MenuNavigation from "./MenuNavigation"
 import { INavigation } from "@/types/navigation"
+import CartIcon from "./CartIcon"
 
 const navigations: INavigation[] = [
     { text: "صفحه اصلی", href: "/", icon: FiHome({}) },
@@ -37,12 +37,8 @@ export default function Menu() {
                     <Link href={"#"}>
                         <FiUser size={22} />
                     </Link>
-                    <Link
-                        href={"/cart"}
-                        className="text-white bg-green-400 hover:bg-green-500 transition p-2 rounded-xl"
-                    >
-                        <LuShoppingBasket size={22} />
-                    </Link>
+
+                    <CartIcon />
                 </div>
             </div>
             <div className="hidden md:flex items-center justify-between py-2 px-6">
