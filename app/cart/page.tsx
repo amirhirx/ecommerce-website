@@ -3,14 +3,10 @@ import { Checkout } from "@/components/cart/Checkout"
 import { ProductCartCard } from "@/components/cart/ProductCartCard"
 import { CartContext } from "@/contexts/CartContext"
 import { getProductById } from "@/services/getProductById"
-import { IProduct } from "@/types/Product"
+import { IProductInCart } from "@/types/ProductInCart"
 import { useContext, useEffect, useState } from "react"
 
 export default function Cart() {
-    interface IProductInCart {
-        product: IProduct
-        qty: number
-    }
     const { cart } = useContext(CartContext)
     const [productsInCart, setProductsInCart] = useState<IProductInCart[]>(
         [] as IProductInCart[],
@@ -51,7 +47,7 @@ export default function Cart() {
                             )
                         })}
                     </div>
-                    <Checkout />
+                    <Checkout products={productsInCart} />
                 </div>
             ) : (
                 <div className="w-full h-[50vh] flex items-center justify-center">
