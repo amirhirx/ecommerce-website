@@ -25,23 +25,23 @@ export default function ProductPrice({
     }
 
     return (
-        <div className="w-full bg-white rounded-xl py-2 px-4 space-y-4 md:sticky md:top-3">
-            <h3 className="font-bold text-lg">خرید محصول</h3>
-            <ul className="text-sm text-gray-600 space-y-4">
-                <li className="flex gap-2">
-                    <FaBoxesPacking size={18} />
+        <div className="w-full bg-white rounded-xl py-3 md:py-2 px-4 space-y-4 md:sticky md:top-3">
+            <h3 className="font-bold text-xl md:text-lg">خرید محصول</h3>
+            <ul className="md:text-sm text-gray-600 space-y-4">
+                <li className="flex gap-2 items-center">
+                    <FaBoxesPacking className="text-xl md:text-sm" />
                     ارسال توسط فروشگاه
                 </li>
-                <li className="flex gap-2">
-                    <IoBagCheckSharp size={18} />
+                <li className="flex gap-2 items-center">
+                    <IoBagCheckSharp className="text-xl md:text-sm" />
                     گارانتی اصالت و سلامت کالا
                 </li>
-                <li className="flex gap-2">
-                    <IoMdPricetags size={18} />
+                <li className="flex gap-2 items-center">
+                    <IoMdPricetags className="text-xl md:text-sm" />
                     قیمت منصفانه و رقابتی
                 </li>
-                <li className="flex gap-2">
-                    <MdPayments size={18} />
+                <li className="flex gap-2 items-center">
+                    <MdPayments className="text-xl md:text-sm" />
                     پرداخت آنلاین، سریع و ایمن
                 </li>
             </ul>
@@ -52,22 +52,24 @@ export default function ProductPrice({
                             {formatPrice(price)}
                         </strong>
                     )}
-                    <strong className={`text-xl`}>
+                    <strong className={`text-2xl md:text-lg`}>
                         {isPriceOff
                             ? formatPrice(discountedPrice)
                             : formatPrice(price)}
-                        تومان
+                        <span> تومان</span>
                     </strong>
                 </div>
-                <div>
-                    <span className="bg-red-500 text-white rounded-xl py-1.5 px-2">
-                        {discount}%
-                    </span>
-                </div>
+                {discount ? (
+                    <div>
+                        <span className="bg-red-500 text-white rounded-xl py-1.5 px-2">
+                            {discount}%
+                        </span>
+                    </div>
+                ) : null}
             </div>
             <button
                 onClick={clickHandler}
-                className="w-full py-2 bg-green-400 text-white font-extrabold rounded-xl cursor-pointer"
+                className="w-full py-3 md:py-2 bg-green-400 text-white font-extrabold rounded-xl cursor-pointer"
             >
                 افزودن به سبد خرید
             </button>
