@@ -11,10 +11,12 @@ export default function ProductPrice({
     id,
     price,
     discount,
+    inStock,
 }: {
     id: number
     price: number
     discount: number
+    inStock: boolean
 }) {
     const isPriceOff = discount ? true : false
     const discountedPrice = price - (price * discount) / 100
@@ -45,33 +47,36 @@ export default function ProductPrice({
                     پرداخت آنلاین، سریع و ایمن
                 </li>
             </ul>
-            <div className="flex justify-between items-center">
-                <div className="flex flex-col gap-2">
-                    {isPriceOff && (
-                        <strong className="text-xl line-through decoration-1 text-red-500">
-                            {formatPrice(price)}
+            {inStock && (
+                <div className="flex justify-between items-center">
+                    <div className="flex flex-col gap-2">
+                        {isPriceOff && (
+                            <strong className="text-xl line-through decoration-1 text-red-500">
+                                {formatPrice(price)}
+                            </strong>
+                        )}
+                        <strong className={`text-2xl md:text-lg`}>
+                            {isPriceOff
+                                ? formatPrice(discountedPrice)
+                                : formatPrice(price)}
+                            <span> تومان</span>
                         </strong>
-                    )}
-                    <strong className={`text-2xl md:text-lg`}>
-                        {isPriceOff
-                            ? formatPrice(discountedPrice)
-                            : formatPrice(price)}
-                        <span> تومان</span>
-                    </strong>
-                </div>
-                {discount ? (
-                    <div>
-                        <span className="bg-red-500 text-white rounded-xl py-1.5 px-2">
-                            {discount}%
-                        </span>
                     </div>
-                ) : null}
-            </div>
+                    {discount ? (
+                        <div>
+                            <span className="bg-red-500 text-white rounded-xl py-1.5 px-2">
+                                {discount}%
+                            </span>
+                        </div>
+                    ) : null}
+                </div>
+            )}
             <button
                 onClick={clickHandler}
-                className="w-full py-3 md:py-2 bg-green-400 text-white font-extrabold rounded-xl cursor-pointer"
+                className="w-full py-3 md:py-2 bg-green-400 disabled:bg-gray-500 text-white font-extrabold rounded-xl cursor-pointer"
+                disabled={!inStock}
             >
-                افزودن به سبد خرید
+                {inStock ? " افزودن به سبد خرید" : "موجود نیست"}
             </button>
         </div>
     )

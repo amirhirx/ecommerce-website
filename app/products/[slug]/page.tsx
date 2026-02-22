@@ -19,6 +19,7 @@ export default async function Product({
         shortDescription,
         features,
         description,
+        inStock,
     }: IProduct = await getProductBySlug(slug)
 
     return (
@@ -33,7 +34,12 @@ export default async function Product({
                     />
                 </div>
                 <div className="md:w-84 w-full">
-                    <ProductPrice id={id} price={price} discount={discount} />
+                    <ProductPrice
+                        id={id}
+                        price={price}
+                        discount={discount}
+                        inStock={inStock}
+                    />
                 </div>
             </div>
             <ProductDescription content={description} />
