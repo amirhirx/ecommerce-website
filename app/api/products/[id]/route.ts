@@ -1,18 +1,18 @@
-import { NextResponse } from "next/server"
-import productsJSON from "@/data.json"
-import { IProduct } from "@/types/Product"
+import { NextRequest, NextResponse } from "next/server"
+import { products } from "@/data.json"
 
 export async function GET(
-    request: Request,
-    { params }: { params: Promise<{ id: number }> },
+    request: NextRequest,
+    context: { params: Promise<{ id: string }> },
 ) {
-    const { id } = await params
-    const products: IProduct[] = productsJSON.products
-    const product = products.find((product) => {
-        return product.id == id
-    })
-
     try {
+        const { id } = await context.params
+        const product = products.find((product) => {
+            return product.id == Number(id)
+        })
+        if (!product)
+            return NextResponse.json({ message: "Not found" }, { status: 404 })
+
         return NextResponse.json({ product }, { status: 200 })
     } catch (error) {
         return NextResponse.json({ error: error }, { status: 500 })
