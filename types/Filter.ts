@@ -1,4 +1,4 @@
 export interface IFilter {
-    maxPrice: number
-    brand: string
+  maxPrice: number;
+  brand: string;
 }

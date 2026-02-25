@@ -1,5 +1,5 @@
 export interface INavigation {
-    text: string
-    href: string
-    icon: React.ReactNode
+  text: string;
+  href: string;
+  icon: React.ReactNode;
 }

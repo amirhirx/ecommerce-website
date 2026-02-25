@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "Arad VF";
-    src: url("/fonts/AradFD-VF.ttf");
+  font-family: "Arad VF";
+  src: url("/fonts/AradFD-VF.ttf");
 }
 
 body {
-    direction: rtl;
-    font-family: "Arad VF", sans-serif;
+  direction: rtl;
+  font-family: "Arad VF", sans-serif;
 }
