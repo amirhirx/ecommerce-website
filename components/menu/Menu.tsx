@@ -1,38 +1,30 @@
-import Link from "next/link";
-import { FiHome } from "react-icons/fi";
-import { BsShop } from "react-icons/bs";
-import { MdOutlineArticle } from "react-icons/md";
-import { IoInformationCircleOutline } from "react-icons/io5";
-import { TfiHeadphoneAlt } from "react-icons/tfi";
-import { FiUser } from "react-icons/fi";
-import MenuNavigation from "./MenuNavigation";
-import { INavigation } from "@/types/navigation";
-import CartIcon from "./CartIcon";
-
-const navigations: INavigation[] = [
-  { text: "صفحه اصلی", href: "/", icon: FiHome({}) },
-  { text: "فروشگاه", href: "/products", icon: BsShop({}) },
-  { text: "وبلاگ", href: "/blog", icon: MdOutlineArticle({}) },
-  { text: "درباره ما", href: "/about", icon: IoInformationCircleOutline({}) },
-  { text: "تماس با ما", href: "/contact", icon: TfiHeadphoneAlt({}) },
-];
+import Link from "next/link"
+import CartIcon from "./CartIcon"
+import Account from "./Account"
+import SearchBar from "./SearchBar"
+import Drawer from "./Drawer"
+import { CircleQuestionMark } from "lucide-react"
 
 export default function Menu() {
-  return (
-    <header className="w-full md:w-98/100 md:my-1.5 mb-1.5 py-3.5 px-4 md:mx-auto md:rounded-xl md:overflow-hidden shadow flex items-center justify-between bg-white ">
-      <div>
-        <Link href={"/"}>
-          <h1 className="text-lg font-black">وبسایت فروشگاهی</h1>
-        </Link>
-      </div>
-      <MenuNavigation items={navigations} />
-      <div className="flex items-center gap-4">
-        <Link href={"#"}>
-          <FiUser size={22} />
-        </Link>
-
-        <CartIcon />
-      </div>
-    </header>
-  );
+    return (
+        <header className="w-full flex md:py-2 md:px-4 flex-col gap-2 md:flex-row items-center justify-between bg-white">
+            <div className="w-full md:w-auto pt-3 pb-1.5 px-4 md:p-0 flex item-center gap-2 justify-between">
+                <Drawer />
+                <Link href={"/"} className="text-2xl font-black text-red-500">
+                    فروشگاه آنلاین
+                </Link>
+                <CircleQuestionMark className="md:hidden" />
+                <div className="w-full md:w-120 hidden md:block">
+                    <SearchBar />
+                </div>
+            </div>
+            <div className="w-full px-3 pb-2 md:p-0 md:w-auto flex items-center gap-2 md:gap-4">
+                <div className="w-full md:w-120 md:hidden">
+                    <SearchBar />
+                </div>
+                <Account />
+                <CartIcon />
+            </div>
+        </header>
+    )
 }
