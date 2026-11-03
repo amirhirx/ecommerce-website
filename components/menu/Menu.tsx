@@ -1,30 +1,47 @@
-import Link from "next/link"
-import CartIcon from "./CartIcon"
-import Account from "./Account"
-import SearchBar from "./SearchBar"
-import Drawer from "./Drawer"
-import { CircleQuestionMark } from "lucide-react"
+import Link from "next/link";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuLink,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+} from "@/components/ui/navigation-menu";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Menu() {
-    return (
-        <header className="w-full flex md:py-2 md:px-4 flex-col gap-2 md:flex-row items-center justify-between bg-white">
-            <div className="w-full md:w-auto pt-3 pb-1.5 px-4 md:p-0 flex item-center gap-4 justify-between">
-                <Drawer />
-                <Link href={"/"} className="text-3xl font-black text-red-500">
-                    فروشگاه آنلاین
-                </Link>
-                <CircleQuestionMark className="md:hidden" />
-                <div className="w-full md:w-120 hidden md:block">
-                    <SearchBar />
-                </div>
-            </div>
-            <div className="w-full md:w-auto px-3 pb-2 md:p-0 flex items-center gap-2 md:gap-4">
-                <div className="w-full md:w-120 md:hidden">
-                    <SearchBar />
-                </div>
-                <Account />
-                <CartIcon />
-            </div>
-        </header>
-    )
+  const id = uuidv4();
+  const navigationMenuItems: {
+    text: string;
+    link: string;
+  }[] = [
+    { text: "خانه", link: "/" },
+    { text: "درباره ما", link: "/about-us" },
+    { text: "تماس با ما", link: "/contact-ut" },
+    {
+      text: "محصولات",
+      link: "/products",
+    },
+  ];
+
+  return (
+    <header className="bg-white py-2 px-4 flex items-center justify-between">
+      <Link href="/">
+        <h1 className="text-xl font-black">بازارک</h1>
+      </Link>
+      <NavigationMenu>
+        <NavigationMenuList>
+          {navigationMenuItems.map((item) => {
+            return (
+              <NavigationMenuItem key={id}>
+                <NavigationMenuLink
+                  render={<Link href={item.link}>{item.text}</Link>}
+                />
+              </NavigationMenuItem>
+            );
+          })}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </header>
+  );
 }
