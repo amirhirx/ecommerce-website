@@ -9,7 +9,6 @@ import { GiShop } from "react-icons/gi";
 import { SlSocialInstagram } from "react-icons/sl";
 import ScrollTopButton from "./ScrollTopButton";
 import { BsTwitterX } from "react-icons/bs";
-import { SiAparat, SiLinkedin } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -127,14 +126,8 @@ export default function Footer() {
             <Link href={"#instagram"}>
               <SlSocialInstagram className="w-8 h-8" />
             </Link>
-            <Link href={"#aparat"}>
-              <SiAparat className="w-8 h-8" />
-            </Link>
             <Link href={"#twitter"}>
               <BsTwitterX className="w-8 h-8" />
-            </Link>
-            <Link href={"#linkedin"}>
-              <SiLinkedin className="w-8 h-8" />
             </Link>
           </div>
         </div>
