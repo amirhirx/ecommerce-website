@@ -1,154 +1,108 @@
-import Image from "next/image";
 import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
 
-import { FaBox } from "react-icons/fa";
-import { MdPayments } from "react-icons/md";
-import { BiSupport } from "react-icons/bi";
-import { TbTruckReturn } from "react-icons/tb";
-import { GiShop } from "react-icons/gi";
-import { SlSocialInstagram } from "react-icons/sl";
-import ScrollTopButton from "./ScrollTopButton";
-import { BsTwitterX } from "react-icons/bs";
+const footerSections = [
+  {
+    id: "online-store",
+    title: "فروشگاه آنلاین",
+    items: [
+      { id: "blog", label: "وبلاگ", href: "/blog" },
+      { id: "sales", label: "فروش", href: "/sales" },
+      { id: "careers", label: "فرصت های شغلی", href: "/careers" },
+      { id: "report", label: "گزارش تخلف", href: "/report" },
+      { id: "contact", label: "تماس با ما", href: "/contact" },
+      { id: "about", label: "درباره", href: "/about" },
+    ],
+  },
+  {
+    id: "customer-service",
+    title: "خدمات مشتریان",
+    items: [
+      { id: "faq", label: "پرسش های متداول", href: "/faq" },
+      { id: "returns", label: "بازگرداندن کالا", href: "/returns" },
+      { id: "bug", label: "گزارش باگ", href: "/bug-report" },
+    ],
+  },
+  {
+    id: "buying-guide",
+    title: "رهنمای خرید",
+    items: [
+      { id: "order", label: "نحوه ثبت سفارش", href: "/order-guide" },
+      { id: "shipping", label: "رویه ارسال سفارش", href: "/shipping" },
+      { id: "payment", label: "شیوه های پرداخت", href: "/payment" },
+    ],
+  },
+];
+
+const faq = [
+  {
+    id: "faq-shipping",
+    question: "سفارش من چند روزه ارسال می‌شود؟",
+    answer:
+      "سفارش‌ها معمولاً ظرف ۱ تا ۳ روز کاری پس از ثبت، آماده و ارسال می‌شوند.",
+  },
+  {
+    id: "faq-return",
+    question: "چطور کالا را بازگردانم؟",
+    answer:
+      "تا ۷ روز پس از دریافت کالا می‌توانید از بخش بازگرداندن کالا در حساب کاربری خود درخواست بازگشت ثبت کنید.",
+  },
+  {
+    id: "faq-payment",
+    question: "چه روش‌های پرداختی دارید؟",
+    answer:
+      "پرداخت آنلاین با کارت‌های عضو شتاب و در صورت فعال بودن، پرداخت در محل امکان‌پذیر است.",
+  },
+  {
+    id: "faq-tracking",
+    question: "از وضعیت سفارشم چطور مطلع شوم؟",
+    answer:
+      "وضعیت سفارش از طریق پیامک ارسال می‌شود و در بخش سفارش‌های من در حساب کاربری نیز قابل پیگیری است.",
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="w-full md:w-98/100 md:my-4 md:mx-auto md:rounded-xl md:overflow-hidden bg-white">
+    <footer className="bg-background mt-4">
       <div className="flex items-center justify-between p-4">
-        <div className="flex flex-col md:block">
-          <div className="flex items-center gap-2">
-            <Image alt="Logo" src={"/logo.svg"} width={36} height={36} />
-            <h4 className="text-xl font-black text-green-400">فروشگاه</h4>
-          </div>
-          <Link href={"tel:02112345678"} className="text-sm">
-            تلفن پشتیبانی 02112345678{" "}
-          </Link>
-          <span className="text-sm md:mr-2">
-            ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم
-          </span>
-        </div>
-        <div>
-          <ScrollTopButton />
-        </div>
+        <h4 className="text-xl font-black">بازارک</h4>
       </div>
-      <div className="lg:flex hidden justify-center items-center gap-20 px-4 py-8">
-        <div className="flex flex-col items-center gap-2">
-          <div className="bg-green-400 p-4 text-white rounded-2xl">
-            <FaBox className="w-8 h-8" />
-          </div>
-          <p className="text-sm font-semibold">امکان تحویل اکسپرس</p>
+      <div className="p-4 space-y-8">
+        <div className="md:w-1/2 flex md:flex-row gap-4">
+          {footerSections.map(({ id, title, items }) => {
+            return (
+              <div key={id} className="w-46">
+                <h3 className="text-lg font-bold">{title}</h3>
+                <ul className="space-y-4 py-2 text-sm font-medium">
+                  {items.map(({ id, label, href }) => {
+                    return (
+                      <li key={id}>
+                        <Link href={href}>{label}</Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
         </div>
-        <div className="flex flex-col items-center gap-2">
-          <div className="bg-green-400 p-4 text-white rounded-2xl">
-            <MdPayments className="w-8 h-8" />
-          </div>
-          <p className="text-sm font-semibold">امکان پرداخت در محل</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <div className="bg-green-400 p-4 text-white rounded-2xl">
-            <BiSupport className="w-8 h-8" />
-          </div>
-          <p className="text-sm font-semibold">۷ روز هفته ۲۴ ساعته</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <div className="bg-green-400 p-4 text-white rounded-2xl">
-            <TbTruckReturn className="w-8 h-8" />
-          </div>
-          <p className="text-sm font-semibold">ضمانت برگشت کالا</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <div className="bg-green-400 p-4 text-white rounded-2xl">
-            <GiShop className="w-8 h-8" />
-          </div>
-          <p className="text-sm font-semibold">ضمانت اصل بودن کالا</p>
-        </div>
+        <Accordion>
+          {faq.map(({ id, question, answer }) => {
+            return (
+              <AccordionItem key={id}>
+                <AccordionTrigger>{question}</AccordionTrigger>
+                <AccordionContent>{answer}</AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
       </div>
-      <div className="p-4 grid md:grid-cols-4 md:grid-rows-1 grid-rows-4">
-        <div>
-          <h3 className="text-lg font-bold">فروشگاه آنلاین</h3>
-          <ul className="space-y-4 py-2 text-sm text-gray-700 font-medium">
-            <li>
-              <Link href={"/"}>وبلاگ</Link>
-            </li>
-            <li>
-              <Link href={"/"}>فروش</Link>
-            </li>
-            <li>
-              <Link href={"/"}>فرصت های شغلی</Link>
-            </li>
-            <li>
-              <Link href={"/"}>گزارش تخلف</Link>
-            </li>
-            <li>
-              <Link href={"/"}>تماس با ما</Link>
-            </li>
-            <li>
-              <Link href={"/"}>درباره</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold">خدمات مشتریان</h3>
-          <ul className="space-y-4 py-2 text-sm text-gray-700 font-medium">
-            <li>
-              <Link href={"/"}>پرسش های متداول</Link>
-            </li>
-            <li>
-              <Link href={"/"}>بازگرداندن کالا</Link>
-            </li>
-            <li>
-              <Link href={"/"}>شرایط استفاده</Link>
-            </li>
-            <li>
-              <Link href={"/"}>حریم خصوصی</Link>
-            </li>
-            <li>
-              <Link href={"/"}>گزارش باگ</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold">رهنمای خرید</h3>
-          <ul className="space-y-4 py-2 text-sm text-gray-700 font-medium">
-            <li>
-              <Link href={"/"}>نحوه ثبت سفارش</Link>
-            </li>
-            <li>
-              <Link href={"/"}>رویه ارسال سفارش</Link>
-            </li>
-            <li>
-              <Link href={"/"}>شیوه های پرداخت</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold">همراه ما باشید!</h3>
-          <div className="grid grid-cols-4 p-4 text-gray-500">
-            <Link href={"#instagram"}>
-              <SlSocialInstagram className="w-8 h-8" />
-            </Link>
-            <Link href={"#twitter"}>
-              <BsTwitterX className="w-8 h-8" />
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="p-4">
-        <h3 className="text-lg font-bold">فروشگاه آنلاین</h3>
-        <p className="text-sm max-w-1/2 text-gray-700 leading-6 line-clamp-4">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
-          ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-          کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
-          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
-          طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
-          الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
-          صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و
-          شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای
-          اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده
-          قرار گیرد.
-        </p>
-      </div>
-      <div className="text-center bg-linear-to-r from-green-400  bg-green-500 to-green-600 text-white p-2">
+      <div className="text-center p-2">
         <p className="font-bold text-sm">فروشگاه آنلاین ۱۴۰۴ ©</p>
       </div>
     </footer>
