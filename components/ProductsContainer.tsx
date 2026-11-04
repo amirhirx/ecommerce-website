@@ -18,7 +18,7 @@ export default async function ProductsContainer({
 
   return (
     <div className="md:w-full">
-      <div className="md:flex md:flex-wrap gap-4 grid grid-cols-1 md:p-0 p-4">
+      <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  md:p-0 p-4">
         {paginatedProducts.map(
           ({ id, title, price, images, slug, discount, inStock }: IProduct) => {
             return (

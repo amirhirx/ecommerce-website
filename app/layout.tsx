@@ -3,10 +3,6 @@ import "./globals.css";
 import Menu from "@/components/menu/Menu";
 import Footer from "@/components/Footer";
 import { CartContextProvider } from "@/contexts/CartContext";
-import { Figtree } from "next/font/google";
-import { cn } from "@/lib/utils";
-
-const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "وبسایت فروشگاهی",
@@ -20,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <CartContextProvider>
-      <html lang="fa" className={cn("font-sans", figtree.variable)}>
+      <html lang="fa">
         <body className={`bg-gray-200 antialiased`}>
           <Menu />
           {children}
