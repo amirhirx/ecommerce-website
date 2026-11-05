@@ -1,8 +1,16 @@
+import remarkGfm from "remark-gfm";
+import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
+import ReactMarkdown from "react-markdown";
+
 export default function ProductDescription({ content }: { content: string }) {
   return (
-    <div className="bg-white rounded-xl py-2 px-6">
-      <h2 className="text-xl font-bold">توضیحات</h2>
-      <p className="leading-8 py-4">{content}</p>
-    </div>
+    <Card className="p-2">
+      <CardContent>
+        <CardTitle className="text-xl font-bold">توضیحات</CardTitle>
+        <CardDescription className="leading-8 py-4 text-neutral-900">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        </CardDescription>
+      </CardContent>
+    </Card>
   );
 }
