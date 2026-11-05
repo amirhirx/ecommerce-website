@@ -1,11 +1,16 @@
 "use client";
-import { FaBoxesPacking } from "react-icons/fa6";
-import { IoBagCheckSharp } from "react-icons/io5";
-import { IoMdPricetags } from "react-icons/io";
-import { MdPayments } from "react-icons/md";
 import { useContext } from "react";
 import { CartContext } from "@/contexts/CartContext";
 import { formatPrice } from "@/utils/formatPrice";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  DeliveryBox01Icon,
+  DollarSignIcon,
+  Payment02Icon,
+  ShoppingBag03Icon,
+} from "@hugeicons/core-free-icons";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
 
 export default function ProductPrice({
   id,
@@ -27,23 +32,23 @@ export default function ProductPrice({
   };
 
   return (
-    <div className="w-full bg-white rounded-xl py-3 md:py-2 px-4 space-y-4 md:sticky md:top-3">
-      <h3 className="font-bold text-xl md:text-lg">خرید محصول</h3>
-      <ul className="md:text-sm text-gray-600 space-y-4">
+    <Card className="w-full px-4 space-y-4 md:sticky md:top-3">
+      <h3 className="font-bold text-xl md:text-lg select-none">خرید محصول</h3>
+      <ul className="md:text-sm text-gray-600 space-y-4 select-none">
         <li className="flex gap-2 items-center">
-          <FaBoxesPacking className="text-xl md:text-sm" />
+          <HugeiconsIcon icon={DeliveryBox01Icon} />
           ارسال توسط فروشگاه
         </li>
         <li className="flex gap-2 items-center">
-          <IoBagCheckSharp className="text-xl md:text-sm" />
+          <HugeiconsIcon icon={ShoppingBag03Icon} />
           گارانتی اصالت و سلامت کالا
         </li>
         <li className="flex gap-2 items-center">
-          <IoMdPricetags className="text-xl md:text-sm" />
+          <HugeiconsIcon icon={DollarSignIcon} />
           قیمت منصفانه و رقابتی
         </li>
         <li className="flex gap-2 items-center">
-          <MdPayments className="text-xl md:text-sm" />
+          <HugeiconsIcon icon={Payment02Icon} />
           پرداخت آنلاین، سریع و ایمن
         </li>
       </ul>
@@ -69,13 +74,9 @@ export default function ProductPrice({
           ) : null}
         </div>
       )}
-      <button
-        onClick={clickHandler}
-        className="w-full py-3 md:py-2 bg-green-400 disabled:bg-gray-500 text-white font-extrabold rounded-xl cursor-pointer"
-        disabled={!inStock}
-      >
+      <Button onClick={clickHandler} disabled={!inStock}>
         {inStock ? " افزودن به سبد خرید" : "موجود نیست"}
-      </button>
-    </div>
+      </Button>
+    </Card>
   );
 }

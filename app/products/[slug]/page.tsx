@@ -33,7 +33,7 @@ export default async function Product({
             features={features}
           />
         </div>
-        <div className="md:w-84 w-full">
+        <div className="md:w-100 w-full">
           <ProductPrice
             id={id}
             price={price}

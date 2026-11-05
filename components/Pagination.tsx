@@ -1,10 +1,15 @@
 "use client";
 import { useUpdateSearchParams } from "@/hooks/useUpdateSearchParams";
-import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { useSearchParams } from "next/navigation";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-
-export default function Pagination({
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+} from "@/components/ui/pagination";
+export default function ProductPagination({
   count,
   productPerPage,
 }: {
@@ -17,26 +22,26 @@ export default function Pagination({
   const totalPages = Math.ceil(count / productPerPage);
 
   return (
-    <div className="flex justify-center items-center gap-4 py-4">
-      {currentPages > 1 && (
-        <button
-          onClick={() => setParams({ page: currentPages - 1 })}
-          className="bg-white w-10 h-10 rounded-lg flex justify-center items-center cursor-pointer"
-        >
-          <BsArrowRight />
-        </button>
-      )}
-      <div className="bg-white w-10 h-10 rounded-lg flex justify-center items-center">
-        {currentPages}
-      </div>
-      {currentPages < totalPages && (
-        <button
-          onClick={() => setParams({ page: currentPages + 1 })}
-          className="bg-white w-10 h-10 rounded-lg flex justify-center items-center cursor-pointer"
-        >
-          <BsArrowLeft />
-        </button>
-      )}
-    </div>
+    <Pagination>
+      <PaginationContent>
+        {currentPages > 1 && (
+          <PaginationItem onClick={() => setParams({ page: currentPages - 1 })}>
+            <PaginationLink>
+              <HugeiconsIcon icon={ArrowRight} />
+            </PaginationLink>
+          </PaginationItem>
+        )}
+        <PaginationItem>
+          <PaginationLink>{currentPages}</PaginationLink>
+        </PaginationItem>
+        {currentPages < totalPages && (
+          <PaginationItem onClick={() => setParams({ page: currentPages + 1 })}>
+            <PaginationLink>
+              <HugeiconsIcon icon={ArrowLeft} />
+            </PaginationLink>
+          </PaginationItem>
+        )}
+      </PaginationContent>
+    </Pagination>
   );
 }

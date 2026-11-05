@@ -1,5 +1,14 @@
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Card, CardContent } from "../ui/card";
 import ProductGallery from "./ProductGallery";
-import { GoInfo } from "react-icons/go";
+import { InfoIcon } from "@hugeicons/core-free-icons";
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemTitle,
+} from "../ui/item";
 
 export default function ProductDetail({
   title,
@@ -16,11 +25,9 @@ export default function ProductDetail({
   }[];
 }) {
   return (
-    <div className="flex flex-col md:flex-row gap-4 py-8 px-4 bg-white rounded-xl">
-      <div>
-        <ProductGallery images={images} alt={`The image of ${title}`} />
-      </div>
-      <div>
+    <Card>
+      <CardContent className="flex flex-col md:flex-row gap-4">
+        <ProductGallery images={images} alt={title} />
         <div className="space-y-4">
           <h1 className="font-black text-2xl">{title}</h1>
           <p className="text-gray-600">{shortDescription}</p>
@@ -28,26 +35,26 @@ export default function ProductDetail({
             <h3 className="flex items-center gap-2 font-bold text-lg mb-2">
               ویژگی ها
             </h3>
-            <ul className="space-y-2.5">
+            <ItemGroup className="md:w-[50vw]">
               {features.map(({ text, value }, index) => {
                 return (
-                  <li
-                    key={`feature-${index}`}
-                    className="text-gray-600 text-sm"
-                  >
-                    <b className="text-black font-semibold">{text}:</b> {value}
-                  </li>
+                  <Item key={`feature-${index}`} variant="muted">
+                    <ItemContent className="md:flex md:flex-row md:gap-8 md:justify-between md:items-center">
+                      <ItemTitle>{text}</ItemTitle>
+                      <ItemDescription>{value}</ItemDescription>
+                    </ItemContent>
+                  </Item>
                 );
               })}
-            </ul>
+            </ItemGroup>
           </div>
           <p className="flex items-center gap-2 text-xs text-gray-600">
-            <GoInfo size={18} />
+            <HugeiconsIcon icon={InfoIcon} />
             امکان برگشت کالا تنها در صورتی مورد قبول است که پلمب کالا باز نشده
             باشد.
           </p>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
