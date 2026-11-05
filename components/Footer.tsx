@@ -5,6 +5,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { CreativeCommonsIcon } from "@hugeicons/core-free-icons";
 
 const footerSections = [
   {
@@ -73,7 +75,7 @@ export default function Footer() {
         <h4 className="text-xl font-black">بازارک</h4>
       </div>
       <div className="p-4 space-y-8">
-        <div className="md:w-1/2 flex md:flex-row gap-4">
+        <div className="md:w-1/2 flex flex-col md:flex-row gap-4">
           {footerSections.map(({ id, title, items }) => {
             return (
               <div key={id} className="w-46">
@@ -103,7 +105,10 @@ export default function Footer() {
         </Accordion>
       </div>
       <div className="text-center p-2">
-        <p className="font-bold text-sm">فروشگاه آنلاین ۱۴۰۴ ©</p>
+        <p className="font-bold text-sm flex items-center justify-center gap-2 select-none">
+          فروشگاه بازارک
+          <HugeiconsIcon icon={CreativeCommonsIcon} className="w-4.5" />
+        </p>
       </div>
     </footer>
   );

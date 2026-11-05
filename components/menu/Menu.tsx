@@ -7,18 +7,27 @@ import {
 } from "@/components/ui/navigation-menu";
 import { v4 as uuid } from "uuid";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { More03Icon } from "@hugeicons/core-free-icons";
+import {
+  Contact01Icon,
+  DeliveryBox02Icon,
+  Home07Icon,
+  InfoIcon,
+  More03Icon,
+} from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { IconSvgObject } from "@hugeicons/core-free-icons/types";
 
 export default function Menu() {
   const navigationMenuItems: {
+    icon: IconSvgObject;
     text: string;
     link: string;
   }[] = [
-    { text: "خانه", link: "/" },
-    { text: "درباره ما", link: "/about-us" },
-    { text: "تماس با ما", link: "/contact-ut" },
+    { icon: Home07Icon, text: "خانه", link: "/" },
+    { icon: InfoIcon, text: "درباره ما", link: "/about-us" },
+    { icon: Contact01Icon, text: "تماس با ما", link: "/contact-ut" },
     {
+      icon: DeliveryBox02Icon,
       text: "محصولات",
       link: "/products",
     },
@@ -35,7 +44,12 @@ export default function Menu() {
             return (
               <NavigationMenuItem key={uuid()}>
                 <NavigationMenuLink
-                  render={<Link href={item.link}>{item.text}</Link>}
+                  render={
+                    <Link href={item.link}>
+                      <HugeiconsIcon icon={item.icon} />
+                      {item.text}
+                    </Link>
+                  }
                 />
               </NavigationMenuItem>
             );
@@ -55,7 +69,10 @@ export default function Menu() {
               {navigationMenuItems.map((item) => {
                 return (
                   <li key={uuid()} className="text-lg font-semibold">
-                    <Link href={item.link}>{item.text}</Link>
+                    <Link href={item.link} className="flex items-center gap-2">
+                      <HugeiconsIcon icon={item.icon} />
+                      {item.text}
+                    </Link>
                   </li>
                 );
               })}
