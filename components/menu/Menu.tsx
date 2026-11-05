@@ -13,9 +13,12 @@ import {
   Home07Icon,
   InfoIcon,
   More03Icon,
+  ShoppingBag,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { IconSvgObject } from "@hugeicons/core-free-icons/types";
+import Image from "next/image";
+import { Button } from "../ui/button";
 
 export default function Menu() {
   const navigationMenuItems: {
@@ -35,7 +38,8 @@ export default function Menu() {
 
   return (
     <header className="bg-background py-2 px-4 flex items-center justify-between">
-      <Link href="/">
+      <Link href="/" className="flex items-center gap-2">
+        <Image width={32} height={32} alt="website logo" src={"/logo.svg"} />
         <h1 className="text-xl font-black">بازارک</h1>
       </Link>
       <NavigationMenu className="hidden md:block">
@@ -54,6 +58,18 @@ export default function Menu() {
               </NavigationMenuItem>
             );
           })}
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              render={
+                <Button>
+                  <Link href="/cart" className="flex items-center gap-2">
+                    <HugeiconsIcon icon={ShoppingBag} />
+                    <span>سبد خرید</span>
+                  </Link>
+                </Button>
+              }
+            />
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
       <div className="md:hidden">
@@ -76,6 +92,12 @@ export default function Menu() {
                   </li>
                 );
               })}
+              <li key={uuid()} className="text-lg font-semibold">
+                <Link href="/cart" className="flex items-center gap-2">
+                  <HugeiconsIcon icon={ShoppingBag} />
+                  سبد خرید
+                </Link>
+              </li>
             </ul>
           </SheetContent>
         </Sheet>
