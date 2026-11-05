@@ -26,7 +26,7 @@ export default function ProductDetail({
 }) {
   return (
     <Card>
-      <CardContent className="flex flex-col md:flex-row gap-4">
+      <CardContent className="flex flex-col lg:flex-row gap-4">
         <ProductGallery images={images} alt={title} />
         <div className="space-y-4">
           <h1 className="font-black text-2xl">{title}</h1>
@@ -35,7 +35,7 @@ export default function ProductDetail({
             <h3 className="flex items-center gap-2 font-bold text-lg mb-2">
               ویژگی ها
             </h3>
-            <ItemGroup className="md:w-[50vw]">
+            <ItemGroup>
               {features.map(({ text, value }, index) => {
                 return (
                   <Item key={`feature-${index}`} variant="muted">
