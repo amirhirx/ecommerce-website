@@ -28,7 +28,11 @@ export default function Menu() {
   }[] = [
     { icon: Home07Icon, text: "خانه", link: "/" },
     { icon: InfoIcon, text: "درباره ما", link: "/about-us" },
-    { icon: Contact01Icon, text: "تماس با ما", link: "/contact-ut" },
+    {
+      icon: Contact01Icon,
+      text: "تماس با ما",
+      link: "/contact-ut",
+    },
     {
       icon: DeliveryBox02Icon,
       text: "محصولات",
@@ -37,7 +41,7 @@ export default function Menu() {
   ];
 
   return (
-    <header className="bg-background py-2 px-4 flex items-center justify-between">
+    <header className="bg-background flex items-center justify-between px-4 py-2">
       <Link href="/" className="flex items-center gap-2">
         <Image width={32} height={32} alt="website logo" src={"/logo.svg"} />
         <h1 className="text-xl font-black">بازارک</h1>
@@ -79,7 +83,7 @@ export default function Menu() {
           </SheetTrigger>
           <SheetContent
             side="left"
-            className="py-16 opacity-90 backdrop-blur-lg px-8"
+            className="px-8 py-16 opacity-90 backdrop-blur-lg"
           >
             <ul className="flex flex-col items-center justify-center gap-4">
               {navigationMenuItems.map((item) => {
