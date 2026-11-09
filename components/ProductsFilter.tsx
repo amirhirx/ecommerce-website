@@ -3,6 +3,17 @@ import { useUpdateSearchParams } from "@/hooks/useUpdateSearchParams";
 import { IFilter } from "@/types/Filter";
 import { formatPrice } from "@/utils/formatPrice";
 import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Slider } from "@/components/ui/slider";
+import { Button } from "./ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+import { Label } from "./ui/label";
 
 export default function ProductsFilter() {
   const setParams = useUpdateSearchParams();
@@ -21,63 +32,70 @@ export default function ProductsFilter() {
   };
 
   return (
-    <div className="md:w-80 w-11/12 mx-auto bg-white p-4 rounded-lg shadow-lg border border-gray-200 md:sticky md:top-3 space-y-4">
-      <h2 className="font-bold text-lg">فیلتر ها</h2>
-      <form>
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <label htmlFor="maxPrice" className="font-bold text-md">
-              قیمت
-            </label>
-            <p className="text-sm font-medium text-gray-600">
-              {formatPrice(filter.maxPrice)} تومان
-            </p>
+    <Card className="md:w-80 w-11/12 mx-auto md:sticky md:top-3 space-y-4">
+      <CardHeader>
+        <CardTitle className="font-bold text-lg">فیلتر ها</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="maxPrice" className="my-3 font-semibold">
+                قیمت
+              </Label>
+              <p className="text-sm font-medium text-gray-600">
+                {formatPrice(filter.maxPrice)} تومان
+              </p>
+            </div>
+            <Slider
+              dir="ltr"
+              name="maxPrice"
+              id="maxPrice"
+              step={100_000}
+              max={500_000_000}
+              value={filter.maxPrice}
+              onValueChange={(value) =>
+                setFilter((prev) => ({ ...prev, maxPrice: Number(value) }))
+              }
+            />
           </div>
-          <input
-            type="range"
-            name="maxPrice"
-            id="maxPrice"
-            className="w-full accent-green-400"
-            min={0}
-            max={1_000_000_000}
-            step={1_000_000}
-            value={filter.maxPrice}
-            onChange={filterChangeHandler}
-          />
-        </div>
-        <div className="space-y-2">
-          <label htmlFor="brand" className="font-bold text-md">
-            برند
-          </label>
-          <select
-            name="brand"
-            id="brand"
-            className="w-full py-2 px-4 bg-gray-300/60 rounded-lg outline-none appearance-none"
-            defaultValue={""}
-            onChange={filterChangeHandler}
-          >
-            <option value={""}>برند ها...</option>
-            <option value="samsung">سامسونگ</option>
-            <option value="xiaomi">شیائومی</option>
-            <option value="poco">پوکو</option>
-            <option value="apple">اپل</option>
-            <option value="nothing">ناتینگ</option>
-          </select>
-        </div>
-        <div className="pt-4">
-          <button
-            className="w-full rounded-md py-2 bg-green-400 text-white font-bold cursor-pointer"
-            onClick={() =>
-              setParams({
-                price: filter.maxPrice,
-                brand: filter.brand,
-              })
-            }
-          >
-            فیلتر
-          </button>
-        </div>
-      </form>
-    </div>
+          <div className="space-y-2">
+            <Label htmlFor="brand" className="my-3 font-semibold">
+              برند
+            </Label>
+            <Select
+              name="brand"
+              id="brand"
+              defaultValue={""}
+              // onChange={filterChangeHandler}
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="برند ها" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="samsung">سامسونگ</SelectItem>
+                <SelectItem value="xiaomi">شیائومی</SelectItem>
+                <SelectItem value="poco">پوکو</SelectItem>
+                <SelectItem value="apple">اپل</SelectItem>
+                <SelectItem value="nothing">ناتینگ</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="pt-4">
+            <Button
+              className="w-full"
+              onClick={() =>
+                setParams({
+                  price: filter.maxPrice,
+                  brand: filter.brand,
+                })
+              }
+            >
+              فیلتر
+            </Button>
+          </div>
+        </form>
+      </CardContent>
+    </Card>
   );
 }
